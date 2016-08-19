@@ -1,0 +1,63 @@
+<?php
+$thisPage = "tab";
+/**
+ * Default tab page
+ */
+
+require './config.php';
+require './template/header.php';
+
+
+// require './template/navigation.php';
+
+$black_logos = false;
+
+if ( isset($show_voucher) && $show_voucher ) { 
+	$banner_url = "http://xyz";
+	$url_target= "blank";
+ }
+else {
+	$banner_url = "./getcoupon.php";
+	$url_target= "self";
+}
+
+?>
+
+<div class="app-wrapper">
+	<div>
+		<div class = "inner">
+			<video playsinline autoplay muted loop class = "bgvid">
+				<source src = "assets/videos/dubai_parks.mov">
+			</video>
+	
+			<div class="container overlay">
+			<!--<div class="logo clearfix">
+				<img src="./assets/images/dubai-logo-white.png" />
+			</div>-->
+
+				<h2> <span class = "bolded">AMAZING</span> IS COMING </h2>
+					<p class="tcs-style">Crack the code for your chance to <span class = "txt-highlight"> WIN your Golden Ticket </span>to AMAZING!</p>				</p>
+				<a href="register.php"><img class = "fb-login" src = "./assets/images/login_btn.png"></a>
+			</p>
+			<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+			<div class="container-tc-priv">
+				<div class="col-xs-6 text-left tc-pp">
+					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>
+				</div>
+
+				<div class="col-xs-6 text-right tc-pp">
+					<a target="_blank" href="<?php echo AppConfig::get('app_privacy'); ?>">Privacy Policy</a>
+				</div>
+			</div>
+		</div>
+
+
+<?php
+
+require './template/footer.php';
+
+?>
