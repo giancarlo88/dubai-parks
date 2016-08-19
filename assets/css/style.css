@@ -47,7 +47,8 @@ body {
   font-family: "klavika", Helvetica, sans-serif;
   width: 100%;
   background: #000;
-  color: #fff; }
+  color: #fff;
+  margin: 0; }
 
 @media (max-width: 700px) {
   .bg-wrapper {
@@ -69,6 +70,7 @@ body {
   padding-left: 10px; }
 
 .mysterynumber {
+  font-family: "klavika", Helvetica, sans-serif;
   width: 50px;
   text-align: center;
   font-size: 30px;
@@ -94,7 +96,7 @@ input[type=text] {
   background-color: #676b6c;
   margin: 0;
   text-align: center;
-  height: 100px;
+  height: 50px;
   padding: 25px 0; }
 
 .form-container {
@@ -102,14 +104,20 @@ input[type=text] {
   text-align: center;
   margin: 0 auto; }
 
-input {
-  margin: 15px 0 15px 0; }
+#registerForm input {
+  font-family: "klavika", Helvetica, sans-serif;
+  margin: 5px;
+  width: 100%; }
 
 .navigation {
   margin: 0 auto;
   position: absolute;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  padding-top: 10px; }
+
+.navigation-container {
+  width: 100%; }
 
 .overlay {
   text-align: center;
@@ -136,7 +144,7 @@ input {
   font-size: 20px; }
 
 .reg-instructions {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   font-size: 20px; }
 

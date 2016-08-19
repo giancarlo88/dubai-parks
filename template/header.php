@@ -75,10 +75,13 @@ $thisPage;
     <img class = "dp-logo" src = "./assets/images/dp_logo_header.png">
     <div class = "tc-logo"><img class = "tc-img" src = "./assets/images/tc_logo_header.png"></div>
         
-    <div class = "navigation"><ul>
+    <div class = "navigation-container">
+    <div class = "navigation">
+    <ul>
     <li <?php if ($thisPage == 'tab') {echo "class = 'currentPage'";}?>><a href = "tab.php">HOME</a></li> |
         <li <?php if ($thisPage == "register") {echo "class = 'currentPage'";}?>><a href = "register.php">ENTER</a></li> |
         <li <?php if ($thisPage == "tcs") {echo "class = 'currentPage'";}?>><a href = "terms-conditions.php">Ts&Cs</a></li>
     </ul>
+    </div>
     </div>
 </div>
