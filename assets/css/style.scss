@@ -135,8 +135,6 @@ body {
   }
 }
 
-
-
 .mysteryNumbers {
   text-align: center;
   overflow: hidden;
@@ -269,6 +267,10 @@ body {
   margin: 0 auto;
 }
 
+.scratch__mystery-number-text {
+  display:none;
+}
+
 .steps {
   width: 75%;
   margin: 0 auto;
@@ -325,8 +327,8 @@ body {
   border: 3px solid yellow;
   position: absolute;
   top: 50%;
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height:auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -341,8 +343,9 @@ body {
 }
 
 .underlay {
-  width: 500px;
-  height: 500px;  
+  width: 100%;
+  height: auto;  
+  pointer-events:none;
 }
 
 .big-slash {
@@ -371,14 +374,15 @@ body {
   text-align: center;
 }
 
-$heights: 0px, 0px, 400px, 400px, 200px, 200px;
-$lengths: 0px, 400px, 0px, 400px, 200px, 400px;
-
+$heights: 20px, 280px, 505px, 500px, 280px, 30px;
+$lengths: 550px, 700px, 550px, 275px, 100px, 200px;
+$rotations: 35deg, 0deg, -35deg, 35deg, 0deg, -35deg;
 
 @for $i from 1 through 6{
     #js-canvas#{$i}{
         top: nth($heights, $i);
         left: nth($lengths, $i);
+        transform: rotate(nth($rotations, $i))
     }
 }
 

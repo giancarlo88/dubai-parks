@@ -125,11 +125,11 @@ function updateNumbers(tag, position) {
     case "2" :
     case "3" :
     case "5" :
-      $(tag).fadeOut().html("1").fadeIn(1000);
+      $(tag).html("1").fadeIn(1000);
       break;
     case "1":
     case "4":
-      $(tag).fadeOut().html("0").fadeIn(1000);
+      $(tag).html("0").fadeOut().fadeIn(1000);
       break;
     case "6":
       $(tag).fadeOut().html("6").fadeIn(1000);
