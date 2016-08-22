@@ -17,7 +17,7 @@ $last_page = true;
 
 <div class="app-wrapper">
 
-	<div class="bg-wrapper">
+	<div class="reg__bg-wrapper">
 
 		<div class="gis-container">
 			<h4 class="text-center">Thanks for entering, good luck!</h4>

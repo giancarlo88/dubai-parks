@@ -13,13 +13,13 @@ require './template/header.php';
 ?>
 
 <div class="app-wrapper">
-	<div class="bg-wrapper">
+	<div class="reg__bg-wrapper">
 		<div class = "registration">
 			<div class="reg-instructions">
 				<div class = "steps">
 					<p><strong>1:</strong> PLEASE LIKE OUR FACEBOOK PAGE. 
 					</p>
-						<div class = "button-container">
+						<div class = "reg__button-container">
 							<span class="btn-fb-like">
 								<div class="fb-like" data-href="https://facebook.com/thomascook" data-layout="button" data-action="like" data-show-faces="false" data-share="false">
 								</div>
@@ -55,27 +55,27 @@ require './template/header.php';
 							<input id = "num6" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >	
 						</div>
 					</div>	
-						<div class = "checkbox-container">
-							<div class="checkbox">
+						<div class = "reg__checkbox-container">
+							<div class="reg__checkbox">
 								<label>
-									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
+									<input type="reg__checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
 								</label>
 							</div>
-							<div class="checkbox">
+							<div class="reg__checkbox">
 								<label>
-									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to receive emails from Thomas Cook UK
+									<input type="reg__checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to receive emails from Thomas Cook UK
 								</label>
 							</div>
 						</div>
 					</div>
 				
 
-					<div class = "btn-container">
+					<div class = "reg__btn-container">
 						<!--<div class="text-center">
 							<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
 							<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
 							<input type="hidden" name="fbid" value="" id="fbidField"> -->
-							<input type="submit" name="submit" value="Confirm" id="submitBtn" class="button">
+							<input type="submit" name="submit" value="Confirm" id="reg__submitBtn" class="button">
 					
 						</div> 
 					</form>

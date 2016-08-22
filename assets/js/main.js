@@ -480,7 +480,7 @@ $(".mysterynumber").on("focusout", function() {
 				num4: $('[id=fourthNum]'),
 				num5: $('[id=fifthNum]'),
 				num6: $('[id=sixthNum]'),
-				submitBtn: $('[id=submitBtn]')
+				reg__submitBtn: $('[id=reg__submitBtn]')
 			};
 
 			FB.api('/me?fields=first_name,last_name,email', function(info)	{
@@ -523,7 +523,7 @@ $(".mysterynumber").on("focusout", function() {
 
 
 	framework.validateRegisterForm = function(formFields)	{
-		formFields.submitBtn.on('click', function(e)	{
+		formFields.reg__submitBtn.on('click', function(e)	{
 			var numbers = {
 				1: formFields.num1.val(),
 				2: formFields.num2.val(),
