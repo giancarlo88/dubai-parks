@@ -1,11 +1,10 @@
-@import "csstemplate.css"  ;
 
 $tc-orange: rgb(253, 173, 0);
-$db-pink: #E1005C;
+$dp-pink: #E1005C;
 $text-color: rgb(255, 255, 255);
 $header-color: rgb(103, 107, 108);
 $fonts: "klavika", Helvetica, sans-serif;
-
+$border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0), rgb(247, 229, 0), rgb(236, 0, 4), rgb(0, 179, 181);
 
 a {
     text-decoration: none;
@@ -22,9 +21,36 @@ a {
     font-weight: bold; //Asset needed
 }
 
-.btn-primary {
+.button{
+  @extend .reg-form;
+  color: $text-color;
+  background: $tc-orange;
   border: 0;
-  width: 50%;
+ 
+
+}
+
+#submitBtn {
+  width: 30%;
+  color: #eee;
+}
+
+.checkbox-container, .btn-container {
+  width: 55%;
+  margin: 10px auto;
+  @media (max-width: 850px) {
+    width: 85%; 
+  }
+}
+
+.btn-container { 
+  text-align: center;
+}
+
+.checkbox {
+  padding: 5px 0;
+  text-align: left;
+
 }
 
 ul {
@@ -34,6 +60,9 @@ ul {
   overflow: hidden;
   text-align: center; 
   font-size: 26px;
+  @media (max-width: 850px) {
+    font-size: 16px;
+  }
 }
 
 li {
@@ -43,22 +72,39 @@ li {
 
 .bg-wrapper {
   background: url("../images/ring.png") no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    height: 150%;
+  background-size: cover;
+  min-height: 915px;
+  background-position: top center;
+  position: relative;
+
+  @media (max-width: 850px) {
+    background-position: center center;
+    padding-top: 4em;
+    min-height: 600px;
+  }
+  
+
 }
+
 
 .button-container {
 text-align: center;
 padding-bottom: 5%;
 }
 
-input[type="submit"]{
-  width: 250px;
-  background: #E1005C;
-  margin: 15px; 
+.tc {
+  float: left;
 }
 
+.container-tc-priv {
+  width: 100%;
+  position: absolute;
+  bottom: 0
+}
+
+.privacy {
+  float: right;
+}
 .app-wrapper {
     width: 100%;
     height: 100% !important;
@@ -74,22 +120,7 @@ body {
 }
 
 
-@media (max-width: 700px) {
 
-.bg-wrapper {
-  top: 5%;
-}
-  }
-
-
-.button-container {
-  text-align: center;
-  margin: 10px;
-}
-
-.checkbox {
-  text-align: left;
-}
 
 .currentPage a, .txt-highlight{
   color: $tc-orange;
@@ -97,31 +128,26 @@ body {
 
 .dp-logo {
     float: left;
-    width: 200px;
+    width: 20%;
     padding-left: 10px;
+    @media (max-width: 850px) {
+    width: 50px;
+  }
 }
 
-.mysterynumber  {
-  font-family: $fonts;
-  width: 50px;
-  text-align: center;
-  font-size: 30px;
-  padding-top: 10px;
-}
+
 
 .mysteryNumbers {
-  width: 400px; 
-  margin: 0 auto;
-  text-align: center; 
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
   }
 
+@for $i from 1 through 6 {
+    #num#{$i}{
+        border-color: nth($border-colors, $i);
 
-
-input[type=text] {
-  border-radius: 10px;
-  height: 50px;
-  border: 0;
-  color: #111;
+    }
 }
 
 .inner {
@@ -137,6 +163,9 @@ input[type=text] {
   text-align: center;
   height: 50px;
   padding: 25px 0;
+  @media (max-width: 850px) {
+   height: 30px; 
+  }
 
 }
 
@@ -144,12 +173,34 @@ input[type=text] {
   width: 50%;
   text-align: center;
   margin: 0 auto;
+  @media (max-width: 850px) {
+    width: 90%;
+  }
 }
 
- #registerForm input{
+.reg-form {
   font-family: $fonts;
-  margin: 5px;
+  font-size: 16px;
+  padding-left: 5px;
+  margin: 5px 0;
   width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  height: 40px;
+  border: 0;
+  color: #111;
+}
+
+.mysterynumber {
+  @extend .reg-form;
+  background-color: #000;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 auto;
+  border: 2px solid;
+  max-width: 40px;
+  padding: 0;
+  border-radius: 0px;
 
 }
 
@@ -179,14 +230,18 @@ input[type=text] {
 }
 
 .tc-img {
-    width: 50px;
+    width: 40px;
 }
 
 .registration {
   margin: 0 auto;
   width: 55%;
-  min-width: 400px;
-  padding-top: 5%;
+  padding-top: 10%;
+  
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+
 }
 
 .register {
@@ -198,13 +253,24 @@ input[type=text] {
   width: 70%;
   margin: 0 auto;
   font-size: 20px;
+  @media (max-width: 850px) {
+  width: 100%;
+  }
 }
 
 .steps {
-  width: 100%;
+  width: 75%;
   margin: 0 auto;
+  & p {
+    margin: 5px 0;
+
+  }
 }
 
+.mn-message { 
+  text-align: left;
+  margin-bottom: .5em;
+}
 
 input[type=text]:focus {
   border-color: #E1005C;
@@ -214,7 +280,7 @@ input[type=text]:focus {
 }
 
 strong {
-  color: #e61860;
+  color: $tc-orange;
 }
 
 .tc-logo {

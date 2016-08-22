@@ -16,94 +16,85 @@ require './template/header.php';
 	<div class="bg-wrapper">
 		<div class = "registration">
 			<div class="reg-instructions">
-				<!--<span class = "text-center"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></span> -->
-							<div class = "steps">
-							<p><strong>1:</strong> PLEASE LIKE OUR FACEBOOK PAGE. </p>
-							<div class = "button-container">
+				<div class = "steps">
+					<p><strong>1:</strong> PLEASE LIKE OUR FACEBOOK PAGE. 
+					</p>
+						<div class = "button-container">
 							<span class="btn-fb-like">
-							<div class="fb-like" data-href="https://facebook.com/thomascook" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+								<div class="fb-like" data-href="https://facebook.com/thomascook" data-layout="button" data-action="like" data-show-faces="false" data-share="false">
+								</div>
 							</span>
-							</div>
-							<p><strong>2:</strong> CONFIRM YOUR DETAILS:</p> 
-							</div>
 						</div>
+						<p class = "left"><strong>2:</strong> CONFIRM YOUR DETAILS:
+						</p> 
+				</div>
+			</div>
 				<!--<dd class="unlike-warning text-danger">You have unliked our Facebook page, please Like again.</dd> -->
-				<div class = "form-container">
-
-				<form id="registerForm" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="form-horizontal" role="form">
-
-					
+			<form id="registerForm" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="form-horizontal" role="form">
+				<div class = "form-container">	
 						<label class="sr-only" for="firstNameField">First Name</label>
-						<input type="text" name="first_name" id="firstNameField" placeholder="First Name" class="form-control">
+						<input type="text" name="first_name" id="firstNameField" placeholder="First Name" class="reg-form">
 						<label class="sr-only" for="lastNameField">Last Name</label>
-						<input type="text" name="last_name" id="lastNameField" placeholder="Last Name" class="form-control">
+						<input type="text" name="last_name" id="lastNameField" placeholder="Last Name" class="reg-form">
 						<label class="sr-only" for="emailField">Email</label>
-						<input type="text" name="email" id="emailField" placeholder="Email" class="form-control">
-					
+						<input type="text" name="email" id="emailField" placeholder="Email" class="reg-form">
+			
 					<!--<div class="form-group">
 						<label class="sr-only" for="emailField">Phone</label>
 						<div class="col-sm-6 col-sm-offset-3">
 							<input type="text" name="phone" id="phoneField" placeholder="Phone" class="form-control">
 						</div>
 					</div> -->
-					</div>
-					<div class = "mysteryNumbers">
-					
-					<input id = "firstNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
-					<input id = "secondNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
-					<input id = "thirdNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1"  >
-					<input id = "fourthNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
-					<input id = "fifthNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
-					<input id = "sixthNum" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >	
-					
-					
-				
-
-						<div>
+						<p class = "mn-message">Have the <span class = "bold">code</span> already? Insert it below:</p>
+						<div class = "mysteryNumbers">
+							<input id = "num1" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
+							<input id = "num2" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
+							<input id = "num3" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1"  >
+							<input id = "num4" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
+							<input id = "num5" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
+							<input id = "num6" class = "mysterynumber" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >	
+						</div>
+					</div>	
+						<div class = "checkbox-container">
 							<div class="checkbox">
 								<label>
 									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
 								</label>
 							</div>
-						</div>
-
-						<div
 							<div class="checkbox">
 								<label>
 									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to receive emails from Thomas Cook UK
 								</label>
 							</div>
 						</div>
-						
 					</div>
+				
 
-					<div>
+					<div class = "btn-container">
 						<!--<div class="text-center">
 							<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
 							<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
-							<input type="hidden" name="fbid" value="" id="fbidField">
-							<input type="submit" name="submit" value="Confirm" id="submitBtn" class="btn btn-primary">
-						</div> -->
-					</div>
-				</form>
-				</div>
-
-			</div>
-			<div class="container-tc-priv">
-				<div class="col-xs-6 text-left tc-pp">
+							<input type="hidden" name="fbid" value="" id="fbidField"> -->
+							<input type="submit" name="submit" value="Confirm" id="submitBtn" class="button">
+					
+						</div> 
+					</form>
+					<div class="container-tc-priv">
+				<div class="tc">
 					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>
 				</div>
 
-				<div class="col-xs-6 text-right tc-pp">
+				<div class="privacy">
 					<a target="_blank" href="<?php echo AppConfig::get('app_privacy'); ?>">Privacy Policy</a>
 				</div>
-			</div>
-
 		</div>
-	
+					</div>
+				
+				
 
-
+			</div>
+			
+			
+        </div>
 </div>
-<?php
-require './template/footer.php';
-?>
+	 <?php require './template/footer.php'; ?> 
