@@ -1,23 +1,42 @@
+// canvasWidth = document.getElementById("js-container").style.width*0.3,
+// canvasHeight = document.getElementById("js-container").style.height*0.3,
+canvasWidth = $("#js-container").width()*0.3
+canvasHeight = $("#js-container").height()*0.3
 
-  function scratchPad(canvasid) {
+
+imgLoadedWidth  = 0;
+imgLoadedHeight = 0;
+
+
   
-  'use strict';
+  function scratchPad(canvasid, imgFile) {
+  
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
       canvas       = document.getElementById(canvasid),
-      canvasWidth  = canvas.width,
-      canvasHeight = canvas.height,
       ctx          = canvas.getContext('2d'),
-      image        = new Image(),
       brush        = new Image();
+      image        = new Image(),
   // base64 Workaround because Same-Origin-Policy\
-  image.src = "scratch-texture-4.jpg"
+  image.src = imgFile;
+
+  image.onload = function() {
+    alert(this.width + 'x' + this.height);
+  }
+
+  
   
   image.onload = function() {
-    ctx.drawImage(image, 0, 0);
+    ctx.drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight, 0, 0, image.naturalWidth, image.naturalHeight);
     // Show the form when Image is loaded.
     //document.querySelectorAll('.form')[0].style.visibility = 'visible';
   };
+
+  imgLoadedWidth = image.naturalWidth;
+  imgLoadedHeight = image.naturalHeight;
+
+  $(".canvas").attr("width", image.naturalWidth);
+  $(".canvas").attr("height", image.naturalHeight);
 
   brush.src = "circle.png"
   
@@ -46,7 +65,6 @@
         l        = pdata.length,
         total    = (l / stride),
         count    = 0;
-    
     // Iterate over all pixels
     for(var i = count = 0; i < l; i += stride) {
       if (parseInt(pdata[i]) === 0) {
@@ -75,7 +93,8 @@
   
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
-    if (filledInPixels > 25) {
+    console.log(filledInPixels)
+    if (filledInPixels > 50) {
       canvas.parentNode.removeChild(canvas);
       getSecretNumber(canvas.id);
     }
@@ -137,11 +156,41 @@ function updateNumbers(tag, position) {
   }
 }
 
+tmpImage = new Image();
+tmpImage.src = "scratch-texture-large.jpg";
+
+window.onresize = function() {
+  canvasWidth  = $("#js-container").width()*0.3;
+  canvasHeight = $("#js-container").height()*0.3;
+
+  counter = 0;
+
+  
+  console.log(tmpImage);
+
+  while (counter < 6) {
+    ctx = $(".canvas")[counter].getContext('2d');
+    ctx.canvas.width = canvasWidth;
+    ctx.canvas.height = canvasHeight;
+      ctx.drawImage(tmpImage, 0, 0, tmpImage.naturalWidth, tmpImage.naturalHeight, 0, 0, tmpImage.naturalWidth, tmpImage.naturalHeight);
+
+    counter++;
+  }
+    console.log(canvasWidth);
+    console.log(canvasHeight);
+  }
+
 window.onload = function() {
-  scratchPad("js-canvas1");
-  scratchPad("js-canvas2");
-  scratchPad("js-canvas3");
-  scratchPad("js-canvas4");
-  scratchPad("js-canvas5");
-  scratchPad("js-canvas6");
+ var scratchSize;
+ console.log(screen.width)
+ if (screen.width >= 800) 
+ {scratchSize = "scratch-texture-large.jpg";
+ }
+
+  scratchPad("js-canvas1", scratchSize);
+  scratchPad("js-canvas2", scratchSize);
+  scratchPad("js-canvas3", scratchSize);
+  scratchPad("js-canvas4", scratchSize);
+  scratchPad("js-canvas5", scratchSize);
+  scratchPad("js-canvas6", scratchSize);
 }

@@ -4,6 +4,10 @@ a {
   a:hover, a:focus {
     color: #fdad00; }
 
+.canvas {
+  max-width: 1024px;
+  width: auto; }
+
 .bolded {
   font-weight: bold; }
 
@@ -46,7 +50,7 @@ li {
   text-align: center; }
 
 .reg__bg-wrapper {
-  background: url("../images/ring.png") no-repeat;
+  background: url("../images/bg_ring.jpg") no-repeat;
   background-size: cover;
   min-height: 915px;
   background-position: top center;
@@ -191,7 +195,7 @@ body {
 .registration {
   margin: 0 auto;
   width: 55%;
-  padding-top: 10%; }
+  padding-top: 20%; }
   @media (max-width: 850px) {
     .registration {
       width: 100%; } }
@@ -254,29 +258,38 @@ video {
   width: 250px;
   padding: 1em; }
 
-body {
-  padding: 20px 0; }
-
 .scratch-container {
-  border: 3px solid yellow;
   position: absolute;
-  top: 50%;
-  width: 100%;
-  height: auto;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  height: 60%;
+  min-height: 600px;
+  margin: 0 auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
-  user-select: none; }
+  user-select: none;
+  /*background: url("../../play_bg_underlay.png") no-repeat;
+  *background-size: 80%;
+  background-position: center center;
+*/ }
+
+.s-wrapper {
+  margin: 0 auto; }
 
 .scratch-overlay {
   position: absolute;
   z-index: 2;
-  pointer-events: none; }
+  pointer-events: none;
+  left: 0;
+  right: 0; }
 
 .underlay {
-  width: 100%;
-  height: auto;
+  position: absolute;
+  top: 0;
   pointer-events: none; }
 
 .big-slash {
@@ -299,55 +312,37 @@ body {
   text-align: center; }
 
 #js-canvas1 {
-  top: 20px;
-  left: 550px;
-  transform: rotate(35deg); }
-
-#js-canvas2 {
-  top: 280px;
-  left: 700px;
-  transform: rotate(0deg); }
-
-#js-canvas3 {
-  top: 505px;
-  left: 550px;
-  transform: rotate(-35deg); }
-
-#js-canvas4 {
-  top: 500px;
-  left: 275px;
-  transform: rotate(35deg); }
-
-#js-canvas5 {
-  top: 280px;
-  left: 100px;
-  transform: rotate(0deg); }
-
-#js-canvas6 {
-  top: 30px;
-  left: 200px;
-  transform: rotate(-35deg); }
-
-#js-canvas1 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 18.6%;
+  left: 65%; }
 
 #js-canvas2 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 56%;
+  left: 75.7%; }
 
 #js-canvas3 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 83%;
+  left: 57.5%; }
 
 #js-canvas4 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 82.1%;
+  left: 24.3%; }
 
 #js-canvas5 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 56%;
+  left: 5.5%; }
 
 #js-canvas6 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  top: 20%;
+  left: 22%; }

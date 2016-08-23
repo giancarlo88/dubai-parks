@@ -474,13 +474,13 @@ $(".mysterynumber").on("focusout", function() {
 				emailField: $('[id=emailField]'),
 				phoneField: $('[id=phoneField]'),
 				fbidField: $('[id=fbidField]'),
-				num1: $('[id=firstNum]'),
-				num2: $('[id=secondNum]'),
-				num3: $('[id=thirdNum]'),
-				num4: $('[id=fourthNum]'),
-				num5: $('[id=fifthNum]'),
-				num6: $('[id=sixthNum]'),
-				reg__submitBtn: $('[id=reg__submitBtn]')
+				num1: $('[id=num1]'),
+				num2: $('[id=num2]'),
+				num3: $('[id=num3]'),
+				num4: $('[id=num4]'),
+				num5: $('[id=num5]'),
+				num6: $('[id=num6]'),
+				submitBtn: $('[id=reg__submitBtn]')
 			};
 
 			FB.api('/me?fields=first_name,last_name,email', function(info)	{
@@ -523,7 +523,7 @@ $(".mysterynumber").on("focusout", function() {
 
 
 	framework.validateRegisterForm = function(formFields)	{
-		formFields.reg__submitBtn.on('click', function(e)	{
+		formFields.submitBtn.on('click', function(e)	{
 			var numbers = {
 				1: formFields.num1.val(),
 				2: formFields.num2.val(),
@@ -532,9 +532,9 @@ $(".mysterynumber").on("focusout", function() {
 				5: formFields.num5.val(),
 				6: formFields.num6.val()				
 			}
+			console.log(numbers);
 			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6])
-			console.log(combinedNumbers)
-			alert("dwdw");
+			console.log(combinedNumbers);
 			if ( formFields.firstNameField.val() == '' ) {
 				alert('First name is required.');
 				formFields.firstNameField.focus();
@@ -576,7 +576,6 @@ $(".mysterynumber").on("focusout", function() {
 			else {
 				return true;
 			}
-
 			return e.preventDefault();
 		});
 

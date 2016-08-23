@@ -32,12 +32,9 @@ require './template/header.php';
 				<!--<dd class="unlike-warning text-danger">You have unliked our Facebook page, please Like again.</dd> -->
 			<form id="registerForm" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="form-horizontal" role="form">
 				<div class = "form-container">	
-						<label class="sr-only" for="firstNameField">First Name</label>
 						<input type="text" name="first_name" id="firstNameField" placeholder="First Name" class="reg-form">
-						<label class="sr-only" for="lastNameField">Last Name</label>
 						<input type="text" name="last_name" id="lastNameField" placeholder="Last Name" class="reg-form">
-						<label class="sr-only" for="emailField">Email</label>
-						<input type="text" name="email" id="emailField" placeholder="Email" class="reg-form">
+							<input type="text" name="email" id="emailField" placeholder="Email" class="reg-form">
 			
 					<!--<div class="form-group">
 						<label class="sr-only" for="emailField">Phone</label>
@@ -56,14 +53,14 @@ require './template/header.php';
 						</div>
 					</div>	
 						<div class = "reg__checkbox-container">
-							<div class="reg__checkbox">
+							<div class="checkbox">
 								<label>
-									<input type="reg__checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
+									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
 								</label>
 							</div>
 							<div class="reg__checkbox">
 								<label>
-									<input type="reg__checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to receive emails from Thomas Cook UK
+									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to receive emails from Thomas Cook UK
 								</label>
 							</div>
 						</div>

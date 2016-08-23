@@ -16,6 +16,11 @@ a {
 }
 }
 
+.canvas {
+  max-width: 1024px;
+  width: auto;
+}
+
 
 .bolded {
     font-weight: bold; //Asset needed
@@ -71,7 +76,7 @@ li {
 }
 
 .reg__bg-wrapper {
-  background: url("../images/ring.png") no-repeat;
+  background: url("../images/bg_ring.jpg") no-repeat;
   background-size: cover;
   min-height: 915px;
   background-position: top center;
@@ -236,7 +241,7 @@ body {
 .registration {
   margin: 0 auto;
   width: 55%;
-  padding-top: 10%;
+  padding-top: 20%;
   
   @media (max-width: 850px) {
     width: 100%;
@@ -319,32 +324,45 @@ video {
   padding: 1em;  
 }
 
-body {
-  padding: 20px 0;
-}
 
 .scratch-container {
-  border: 3px solid yellow;
   position: absolute;
-  top: 50%;
-  width: 100%;
-  height:auto;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 60%;
+  height:60%;
+  min-height: 600px;
+  margin: 0 auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  /*background: url("../../play_bg_underlay.png") no-repeat;
+  *background-size: 80%;
+  background-position: center center;
+*/
+}
+
+
+.s-wrapper {
+  margin: 0 auto;
 }
 
 .scratch-overlay {
   position: absolute;
   z-index: 2;
   pointer-events: none;
+  left: 0;
+  right: 0;
+ 
+  
 }
 
 .underlay {
-  width: 100%;
-  height: auto;  
+  position: absolute;
+  top: 0;
   pointer-events:none;
 }
 
@@ -368,52 +386,22 @@ body {
     padding-bottom: 0;
 }
 
-
-
 .scratch__mystery-number-row {
   text-align: center;
 }
 
-$heights: 20px, 280px, 505px, 500px, 280px, 30px;
-$lengths: 550px, 700px, 550px, 275px, 100px, 200px;
+$heights: 18.6%, 56%, 83%, 82.1%, 56%, 20%;
+$lengths: 65%, 75.7%, 57.5%, 24.3%, 5.5%, 22%;
 $rotations: 35deg, 0deg, -35deg, 35deg, 0deg, -35deg;
 
 @for $i from 1 through 6{
     #js-canvas#{$i}{
+        position: absolute;
+        z-index: 1;
         top: nth($heights, $i);
-        left: nth($lengths, $i);
-        transform: rotate(nth($rotations, $i))
+        left: nth($lengths, $i); 
+
+        
+        //transform: rotate(nth($rotations, $i))
     }
-}
-
-
-
-#js-canvas1 {
-  position: absolute;
-  z-index: 1
-}
-
-#js-canvas2 {
-  position: absolute;
-  z-index: 1
-}
-
-#js-canvas3 {
-  position: absolute;
-  z-index: 1
-}
-
-#js-canvas4 {
-  position: absolute;
-  z-index: 1
-}
-
-#js-canvas5 {
-  position: absolute;
-  z-index: 1
-}
-
-#js-canvas6  {
-  position: absolute;
-  z-index: 1
 }

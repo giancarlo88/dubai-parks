@@ -30,22 +30,28 @@ require './template/header.php';
 		THEN BE ENTERED INTO THE PRIZE DRAW.
 	</div>
 
-
+	<div class = "s-wrapper">
+	
 	<div class="scratch-container" id="js-container">
-	<div class ="scratch-overlay"><img src = "overlay.png"></div>
-	<canvas class="canvas" id="js-canvas1" width = "200" height = "200"></canvas>
-	<canvas class="canvas" id="js-canvas2" width="200" height="200"></canvas> 
-	<canvas class="canvas" id="js-canvas3" width="200" height="200"></canvas> 
-	<canvas class="canvas" id="js-canvas4" width="200" height="200"></canvas> 
-	<canvas class="canvas" id="js-canvas5" width="200" height="200"></canvas> 
-	<canvas class="canvas" id="js-canvas6" width="200" height="200"></canvas> 
-	<img class = "underlay" src = "underlay.png">
+	<div class ="scratch-overlay"><img src = "play_bg_overlay.png"></div>
+	<canvas class="canvas" id="js-canvas1" ></canvas>
+	<canvas class="canvas" id="js-canvas2" ></canvas> 
+	<canvas class="canvas" id="js-canvas3" ></canvas> 
+	<canvas class="canvas" id="js-canvas4" ></canvas> 
+	<canvas class="canvas" id="js-canvas5" ></canvas> 
+	<canvas class="canvas" id="js-canvas6" ></canvas>
+	<img class = "underlay" src = "play_bg_underlay.png">
+	</div>
 	</div>
 </div>
+</div>
 
-        <script src="assets/js/scratch.js"></script>	
+        	
 
 </div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/scratch.js"></script>
 <?php
 
 require './template/footer.php';
