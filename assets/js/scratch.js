@@ -2,7 +2,7 @@
 // canvasHeight = document.getElementById("js-container").style.height*0.3,
 var collectedNumbers = 0
 
-function scratchPad(canvasid, canvasWidth, canvasHeight) {
+function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
@@ -83,7 +83,7 @@ function scratchPad(canvasid, canvasWidth, canvasHeight) {
   
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
-    if (filledInPixels > 50) {
+    if (filledInPixels > pixelThreshold) {
       canvas.parentNode.removeChild(canvas);
       getSecretNumber(canvas.id);
     }
@@ -128,7 +128,6 @@ function getSecretNumber(id) {
 }
 
 function updateNumbers(tag, position) {
-  console.log(tag, position);
   collectedNumbers+=1;
 
   switch (position) {
@@ -158,12 +157,12 @@ window.onresize = function() {
 
 window.onload = function() {
   sizeScratchpad();
-  scratchPad("js-canvas1", canvasWidth, canvasHeight);
-  scratchPad("js-canvas2", canvasWidth, canvasHeight);
-  scratchPad("js-canvas3", canvasWidth, canvasHeight);
-  scratchPad("js-canvas4", canvasWidth, canvasHeight);
-  scratchPad("js-canvas5", canvasWidth, canvasHeight);
-  scratchPad("js-canvas6", canvasWidth, canvasHeight);
+  scratchPad("js-canvas1", canvasWidth, canvasHeight, 50);
+  scratchPad("js-canvas2", canvasWidth, canvasHeight, 75);
+  scratchPad("js-canvas3", canvasWidth, canvasHeight, 60);
+  scratchPad("js-canvas4", canvasWidth, canvasHeight, 60);
+  scratchPad("js-canvas5", canvasWidth, canvasHeight, 70);
+  scratchPad("js-canvas6", canvasWidth, canvasHeight, 60);
 }
 
 function sizeScratchpad () {
