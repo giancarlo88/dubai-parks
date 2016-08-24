@@ -565,15 +565,20 @@ $(".mysterynumber").on("focusout", function() {
 							formFields.phoneField.select();
 						}*/
 			 else if (combinedNumbers.length != 0 && combinedNumbers.length != 6) {
-			 	alert ("Please enter all the secret numbers.")
+			 	alert ("Please enter the complete code.")
 			 }			
 			
 			else if (combinedNumbers.length != 0 && (!$.isNumeric(numbers[1]) || !$.isNumeric(numbers[2]) || !$.isNumeric(numbers[3]) || !$.isNumeric(numbers[4]) || !$.isNumeric(numbers[5]) || !$.isNumeric(numbers[6])))
 			 {
 				alert ("Please enter numbers only.")
 			}
-			
-			else {
+			else if (combinedNumbers.length == 6 && combinedNumbers !== "011016") {
+				alert ("Sorry, your code is incorrect. Try again!")
+			}
+			else if (combinedNumbers == "011016") {
+				self.location.href = "./thank-you.php"
+			}
+ 			else {
 				return true;
 			}
 			return e.preventDefault();

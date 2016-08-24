@@ -23,9 +23,9 @@ $last_page = true;
 			<div class = "ty__text">
 			<h2>Congratulations!</h2>
 			<h2>You have cracked the code!</h2>
+			<h2><span class = "bolded">AMAZING</span> IS COMING.</h2>
 			<h2><span class = "txt-highlight">1/10/16</span></h2>
 			<br>
-			<h2><span class = "bolded">AMAZING</span> IS COMING.</h2>
 			<p>Share for an additional entry into the prize draw</p>
 			<!--<p style="display: none" class="text-center">You have invited <?php echo isset($userTotalInvites) ? $userTotalInvites . ((int)$userTotalInvites === 1 ? ' friend' : ' friends' ) : '0 friends'; ?> and you now <span class="line-break">have <?php echo isset($userTotalEntries) ? $userTotalEntries . ((int)$userTotalEntries === 1 ? ' entry' : ' entries') : '0 entries'; ?>.</span></p>-->
 </div>
@@ -48,8 +48,7 @@ $last_page = true;
 					</li>
 					<li>
 						<a class="ss-twitter" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(AppConfig::get('twitter_tweet')); ?>&url=<?php echo urlencode(AppConfig::get('twitter_url')); ?>">
-							<span class="fa-stack fa-2x gis-twitter">
-							</span>
+							
 							<span>
 								<img class="sm-icon sm-twitter" src = "./assets/images/twitter_icon.png">
 							</span>

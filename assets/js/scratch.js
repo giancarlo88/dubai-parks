@@ -145,7 +145,11 @@ function updateNumbers(tag, position) {
       break;
   }
 
-  if (collectedNumbers>5) self.location.href = "./thank-you.php";
+  if (collectedNumbers>5) {
+    setTimeout(function(){
+      self.location.href = "./thank-you.php"
+    }, 3000)
+  };
 }
 
 tmpImage = new Image();
@@ -158,10 +162,10 @@ window.onresize = function() {
 window.onload = function() {
   sizeScratchpad();
   scratchPad("js-canvas1", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas2", canvasWidth, canvasHeight, 75);
+  scratchPad("js-canvas2", canvasWidth, canvasHeight, 50);
   scratchPad("js-canvas3", canvasWidth, canvasHeight, 60);
   scratchPad("js-canvas4", canvasWidth, canvasHeight, 60);
-  scratchPad("js-canvas5", canvasWidth, canvasHeight, 70);
+  scratchPad("js-canvas5", canvasWidth, canvasHeight, 50);
   scratchPad("js-canvas6", canvasWidth, canvasHeight, 60);
 }
 
@@ -174,33 +178,33 @@ function sizeScratchpad () {
   while (counter < 6) {
     canvasWidth  = parseInt($("#underlay").width())
     canvasHeight = parseInt($("#underlay").height());
-    if (counter === 0) {
+     if (counter === 0) {
+      canvasWidth *= 245/800;
+      canvasHeight *= 245/800;
+    }
+    
+    if (counter === 1) {
       canvasWidth *= 280/800;
       canvasHeight *= 280/800;
     }
-    if (counter === 1) {
+    if (counter === 2) {
       canvasWidth *= 210/800; 
       canvasHeight *= 160/800;
     }
 
-    if (counter === 2) {
+    if (counter === 3) {
       canvasWidth *= 220/800
       canvasHeight *= 210/800
         }
 
-    if (counter === 3) {
+    if (counter === 4) {
       canvasWidth *= 220/800;
       canvasHeight *= 210/800;
     }
 
-    if (counter === 4) {
+    if (counter === 5) {
       canvasWidth *= 180/800;
       canvasHeight *= 200/800 ;
-    }
-
-    if (counter === 5) {
-      canvasWidth *= 245/800;
-      canvasHeight *= 245/800;
     }
     ctx = $(".canvas")[counter].getContext('2d');
     ctx.canvas.width = canvasWidth;

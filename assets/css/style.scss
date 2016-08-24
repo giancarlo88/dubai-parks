@@ -2,9 +2,9 @@
 $tc-orange: rgb(253, 173, 0);
 $dp-pink: #E1005C;
 $text-color: rgb(255, 255, 255);
-$header-color: rgb(103, 107, 108);
+$header-color: #1E1025;
 $fonts: "klavika", Helvetica, sans-serif;
-$border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0), rgb(247, 229, 0), rgb(236, 0, 4), rgb(0, 179, 181);
+$border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0),rgb(236, 0, 4), rgb(247, 229, 0), rgb(0, 179, 181);
 
 a {
     text-decoration: none;
@@ -35,27 +35,53 @@ a {
 
 }
 
+.long-checkbox {
+  display: inline-block;
+}
+
 #reg__submitBtn {
   width: 30%;
+  min-width: 100px;
   color: #eee;
+  cursor: pointer;
 }
 
-.reg__checkbox-container, .reg__btn-container {
-  width: 55%;
-  margin: 10px auto;
-  @media (max-width: 850px) {
-    width: 85%; 
-  }
+.reg__checkbox-container1 {
+  padding-left: 5%;
+  width: 100%;
+  margin: 0 auto;
+  word-spacing: -1px;
 }
+
 
 .reg__btn-container { 
+  margin: 0 auto;
   text-align: center;
+  width: 50%;
+  
 }
 
 .reg__checkbox {
   padding: 5px 0;
   text-align: left;
+}
 
+.reg__checkbox label {
+  display: block;
+  margin-left: 20px;
+}
+
+.reg__checkbox input {
+  display: inline-block;
+  margin-left: -20px;
+  vertical-align: top;
+}
+
+
+.tc-img {
+float: left;
+padding-left: 10px;
+height: 50px;
 }
 
 ul {
@@ -82,10 +108,9 @@ li {
   background-position: top center;
   position: relative;
 
-  @media (max-width: 850px) {
-    background-position: center center;
-    padding-top: 4em;
-    min-height: 600px;
+  @media (max-width: 550px) {
+    padding-top: 10%;
+    min-height: 0;
   }
   
 
@@ -94,21 +119,28 @@ li {
 
 .reg__button-container {
 text-align: center;
-padding-bottom: 5%;
+padding: 2%;
 }
 
 .tc {
   float: left;
+  margin-left: 10px;
 }
 
-.container-tc-priv {
+.tab__container-tc-priv {
   width: 100%;
   bottom: 0;
   font-size: 14px;
+ 
 }
 
+.reg__container-tc-priv {
+  @extend .tab__container-tc-priv;
+  position: absolute;
+}
 .privacy {
   float: right;
+  padding-right: 10px;
 }
 .app-wrapper {
     width: 100%;
@@ -132,11 +164,10 @@ body {
 }
 
 .dp-logo {
-    float: left;
-    width: 20%;
-    padding-left: 10px;
+    float: right;
+    padding-right: 10px;
     @media (max-width: 850px) {
-    width: 50px;
+    height: 25px;
   }
 }
 
@@ -145,6 +176,7 @@ body {
   width: 100%;
   color: #eee;
   white-space: nowrap;
+  margin: 5px 0;
   }
 
 @for $i from 1 through 6 {
@@ -155,8 +187,7 @@ body {
 
 
 .inner {
-    display: inline-block;
-    position: relative;
+      position: relative;
 
     }
 
@@ -174,12 +205,11 @@ body {
 }
 
 .form-container {
-  width: 50%;
   text-align: center;
   margin: 0 auto;
-  @media (max-width: 850px) {
-    width: 90%;
-  }
+  // @media (max-width: 850px) {
+  //   width: 90%;
+  // }
 }
 
 .reg-form {
@@ -240,24 +270,24 @@ body {
     top:100px;
     height: 100%;
     min-height: 700px;
-    padding-top: 10%;
     background-color: rgba(0, 0, 0, 0.8);
     background-image: url("../images/bg_congratulations.png");
     background-size: cover;
   }
 
 
-.tc-img {
-    width: 40px;
-}
-
 .registration {
   margin: 0 auto;
-  width: 55%;
-  padding-top: 20%;
-  
-  @media (max-width: 850px) {
-    width: 100%;
+  width: 40%;
+  padding-top: 18%;
+  @media (max-width: 800px) {
+    width: 60%;
+    padding-top: 30%;
+  }
+  @media (max-width: 550px) {
+    width: 90%;
+    padding-top: 5%;
+    min-height: 0;
   }
 
 }
@@ -268,7 +298,8 @@ body {
 }
 
 .reg-instructions {
-  width: 70%;
+  white-space: nowrap;
+  width: 80%;
   margin: 0 auto;
   font-size: 20px;
   @media (max-width: 850px) {
@@ -289,18 +320,38 @@ body {
   display:none;
 }
 
+.scratch__logo-number-container{
+  display: inline-block;
+  text-align: center; 
+  margin: 1%;
+  
+  & img {
+      width: 100px;
+    }
+
+  @media (max-width: 800px){
+  margin: 10px 1px;
+    & .scratch__mystery-number {
+      max-width: 40px
+    }
+    & img {
+      display: none;
+    
+    }
+  }
+}
+
+
 .steps {
-  width: 75%;
-  margin: 0 auto;
   & p {
     margin: 5px 0;
 
   }
 }
 
-.mn-message { 
-  text-align: left;
-  margin-bottom: .5em;
+.sm-icon {
+  height: 50px;
+  margin: 10px;
 }
 
 input[type=text]:focus {
@@ -314,10 +365,7 @@ strong {
   color: $tc-orange;
 }
 
-.tc-logo {
-    float: right;
-    padding-right: 10px
-}
+
 
 
 .tickboxes {
@@ -333,7 +381,7 @@ video {
 }
 
 .fb-login {
-  width: 250px; 
+  width: 200px; 
   padding: 1em;  
 }
 
@@ -384,25 +432,26 @@ width: 100%;
 
 
 .big-slash {
-  font-size: 50px;
+  font-size: 75px;
 }
 
 .scratch__mystery-number, .big-slash { 
-  margin: 10px;
-  vertical-align: middle;
-
+  margin: auto;
+  vertical-align: bottom;
 }
 
+.scratch__mystery-number-row {
+  text-align: center;
+}
 
 .ty__bg-wrapper { 
   background: url("../images/play_bg_with_parks.png") no-repeat;
-  background-position: center top;
+  background-position: center -25%;
   background-size: 75%;
   min-height: 800px;
 }
 
 .scratch__mystery-number {
-    display: inline-block;
     border: solid 2px;
     height: 50px;
     width: 50px;
@@ -411,13 +460,10 @@ width: 100%;
     padding-bottom: 0;
 }
 
-.scratch__mystery-number-row {
-  text-align: center;
-}
 
-$heights: 7.6%, 42%, 61.1%, 60.1%, 41.5%, 12%;
-$lengths: 51%, 69%, 52%, 23%, 5.5%, 18.5%;
-$rotations: 0deg, 0deg, 0deg, 20deg, 0deg, 0deg;
+$heights: 12%, 7.6%, 42%, 61.1%, 60.1%, 41.5%;
+$lengths: 18.5%, 51%, 69%, 52%, 23%, 5.5%;
+$rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 
 @for $i from 1 through 6{
     #js-canvas#{$i}{
@@ -429,4 +475,9 @@ $rotations: 0deg, 0deg, 0deg, 20deg, 0deg, 0deg;
         
         transform: rotate(nth($rotations, $i))
     }
+}
+
+.unlike-warning {
+  font-size: 12px;
+  margin: 5px;
 }

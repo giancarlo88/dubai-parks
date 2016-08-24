@@ -1,27 +1,31 @@
-tc175 logo
-login with facebook smaller
-header ==> black
-flip lgos
-fb login slightly smaller
+//tc175 logo
+//login with facebook smaller
+//header ==> black
+//flip lgos
+//fb login slightly smaller
 
-Crack the code for your chance to WIN tickets to amazing!
+//Crack the code for your chance to WIN tickets to amazing! // What text is gold?
 
-increase width of form (page on first line)
-center coloured boxes
-change second checkbox to (IGGTB)
-T&C/P padding off page
+//increase width of form (page on first line)
+//center coloured boxes
+//change second checkbox to (IGGTB)
+//T&C/P padding off page
 
-Please enter the comp;tete code
-form validation --> make sure code is correct before continuing.
+//Please enter the comp;tete code
+//form validation --> make sure code is correct before continuing.
+//like/unlike message //Needs to be looked at! 
 
-
-like/unlike message
-
-switch instructions and coloured boxes. 
-change colours of boxes to correspond to the wheel colours
-
+//switch instructions and coloured boxes.
+//change colours of boxes to correspond to the wheel colours
+//add logos on top of coloured boxes //Get proper logos! esp lupita
+    -->Hide logos on mobile to make it look better?
+    -->Make text smaller 
+    
 bring up everything on thankyou 
 cneter date
 makde biiger
 make social smaller
 fix bg on facebook.
+make header responsive
+facebook unlike check
+font embedding

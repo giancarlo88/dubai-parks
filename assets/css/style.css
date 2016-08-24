@@ -16,23 +16,43 @@ a {
   background: #fdad00;
   border: 0; }
 
+.long-checkbox {
+  display: inline-block; }
+
 #reg__submitBtn {
   width: 30%;
-  color: #eee; }
+  min-width: 100px;
+  color: #eee;
+  cursor: pointer; }
 
-.reg__checkbox-container, .reg__btn-container {
-  width: 55%;
-  margin: 10px auto; }
-  @media (max-width: 850px) {
-    .reg__checkbox-container, .reg__btn-container {
-      width: 85%; } }
+.reg__checkbox-container1 {
+  padding-left: 5%;
+  width: 100%;
+  margin: 0 auto;
+  word-spacing: -1px; }
 
 .reg__btn-container {
-  text-align: center; }
+  margin: 0 auto;
+  text-align: center;
+  width: 50%; }
 
 .reg__checkbox {
   padding: 5px 0;
   text-align: left; }
+
+.reg__checkbox label {
+  display: block;
+  margin-left: 20px; }
+
+.reg__checkbox input {
+  display: inline-block;
+  margin-left: -20px;
+  vertical-align: top; }
+
+.tc-img {
+  float: left;
+  padding-left: 10px;
+  height: 50px; }
 
 ul {
   list-style-type: none;
@@ -55,26 +75,30 @@ li {
   min-height: 915px;
   background-position: top center;
   position: relative; }
-  @media (max-width: 850px) {
+  @media (max-width: 550px) {
     .reg__bg-wrapper {
-      background-position: center center;
-      padding-top: 4em;
-      min-height: 600px; } }
+      padding-top: 10%;
+      min-height: 0; } }
 
 .reg__button-container {
   text-align: center;
-  padding-bottom: 5%; }
+  padding: 2%; }
 
 .tc {
-  float: left; }
+  float: left;
+  margin-left: 10px; }
 
-.container-tc-priv {
+.tab__container-tc-priv, .reg__container-tc-priv {
   width: 100%;
   bottom: 0;
   font-size: 14px; }
 
+.reg__container-tc-priv {
+  position: absolute; }
+
 .privacy {
-  float: right; }
+  float: right;
+  padding-right: 10px; }
 
 .app-wrapper {
   width: 100%;
@@ -91,18 +115,18 @@ body {
   color: #fdad00; }
 
 .dp-logo {
-  float: left;
-  width: 20%;
-  padding-left: 10px; }
+  float: right;
+  padding-right: 10px; }
   @media (max-width: 850px) {
     .dp-logo {
-      width: 50px; } }
+      height: 25px; } }
 
 .mysteryNumbers {
   text-align: center;
   width: 100%;
   color: #eee;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin: 5px 0; }
 
 #num1, .scratch__mystery-box1 {
   border-color: #ff0064 !important; }
@@ -114,21 +138,20 @@ body {
   border-color: orangered !important; }
 
 #num4, .scratch__mystery-box4 {
-  border-color: #f7e500 !important; }
+  border-color: #ec0004 !important; }
 
 #num5, .scratch__mystery-box5 {
-  border-color: #ec0004 !important; }
+  border-color: #f7e500 !important; }
 
 #num6, .scratch__mystery-box6 {
   border-color: #00b3b5 !important; }
 
 .inner {
-  display: inline-block;
   position: relative; }
 
 .page-header {
   width: 100%;
-  background-color: #676b6c;
+  background-color: #1E1025;
   margin: 0;
   text-align: center;
   height: 50px;
@@ -138,12 +161,8 @@ body {
       height: 30px; } }
 
 .form-container {
-  width: 50%;
   text-align: center;
   margin: 0 auto; }
-  @media (max-width: 850px) {
-    .form-container {
-      width: 90%; } }
 
 .reg-form, .button, .mysterynumber {
   font-family: "klavika", Helvetica, sans-serif;
@@ -194,28 +213,31 @@ body {
   top: 100px;
   height: 100%;
   min-height: 700px;
-  padding-top: 10%;
   background-color: rgba(0, 0, 0, 0.8);
   background-image: url("../images/bg_congratulations.png");
   background-size: cover; }
 
-.tc-img {
-  width: 40px; }
-
 .registration {
   margin: 0 auto;
-  width: 55%;
-  padding-top: 20%; }
-  @media (max-width: 850px) {
+  width: 40%;
+  padding-top: 18%; }
+  @media (max-width: 800px) {
     .registration {
-      width: 100%; } }
+      width: 60%;
+      padding-top: 30%; } }
+  @media (max-width: 550px) {
+    .registration {
+      width: 90%;
+      padding-top: 5%;
+      min-height: 0; } }
 
 .register {
   color: #fff;
   font-size: 20px; }
 
 .reg-instructions {
-  width: 70%;
+  white-space: nowrap;
+  width: 80%;
   margin: 0 auto;
   font-size: 20px; }
   @media (max-width: 850px) {
@@ -233,15 +255,26 @@ body {
 .scratch__mystery-number-text {
   display: none; }
 
-.steps {
-  width: 75%;
-  margin: 0 auto; }
-  .steps p {
-    margin: 5px 0; }
+.scratch__logo-number-container {
+  display: inline-block;
+  text-align: center;
+  margin: 1%; }
+  .scratch__logo-number-container img {
+    width: 100px; }
+  @media (max-width: 800px) {
+    .scratch__logo-number-container {
+      margin: 10px 1px; }
+      .scratch__logo-number-container .scratch__mystery-number {
+        max-width: 40px; }
+      .scratch__logo-number-container img {
+        display: none; } }
 
-.mn-message {
-  text-align: left;
-  margin-bottom: .5em; }
+.steps p {
+  margin: 5px 0; }
+
+.sm-icon {
+  height: 50px;
+  margin: 10px; }
 
 input[type=text]:focus {
   border-color: #E1005C;
@@ -252,10 +285,6 @@ input[type=text]:focus {
 strong {
   color: #fdad00; }
 
-.tc-logo {
-  float: right;
-  padding-right: 10px; }
-
 .tickboxes {
   margin: 0 auto; }
 
@@ -265,7 +294,7 @@ video {
   background: url("../images/background.png") no-repeat center; }
 
 .fb-login {
-  width: 250px;
+  width: 200px;
   padding: 1em; }
 
 .scratch-container {
@@ -306,20 +335,22 @@ video {
   width: 100%; }
 
 .big-slash {
-  font-size: 50px; }
+  font-size: 75px; }
 
 .scratch__mystery-number, .big-slash {
-  margin: 10px;
-  vertical-align: middle; }
+  margin: auto;
+  vertical-align: bottom; }
+
+.scratch__mystery-number-row {
+  text-align: center; }
 
 .ty__bg-wrapper {
   background: url("../images/play_bg_with_parks.png") no-repeat;
-  background-position: center top;
+  background-position: center -25%;
   background-size: 75%;
   min-height: 800px; }
 
 .scratch__mystery-number {
-  display: inline-block;
   border: solid 2px;
   height: 50px;
   width: 50px;
@@ -327,47 +358,48 @@ video {
   padding-top: 5px;
   padding-bottom: 0; }
 
-.scratch__mystery-number-row {
-  text-align: center; }
-
 #js-canvas1 {
+  position: absolute;
+  z-index: 1;
+  top: 12%;
+  left: 18.5%;
+  transform: rotate(0deg); }
+
+#js-canvas2 {
   position: absolute;
   z-index: 1;
   top: 7.6%;
   left: 51%;
   transform: rotate(0deg); }
 
-#js-canvas2 {
+#js-canvas3 {
   position: absolute;
   z-index: 1;
   top: 42%;
   left: 69%;
   transform: rotate(0deg); }
 
-#js-canvas3 {
+#js-canvas4 {
   position: absolute;
   z-index: 1;
   top: 61.1%;
   left: 52%;
   transform: rotate(0deg); }
 
-#js-canvas4 {
+#js-canvas5 {
   position: absolute;
   z-index: 1;
   top: 60.1%;
   left: 23%;
   transform: rotate(20deg); }
 
-#js-canvas5 {
+#js-canvas6 {
   position: absolute;
   z-index: 1;
   top: 41.5%;
   left: 5.5%;
   transform: rotate(0deg); }
 
-#js-canvas6 {
-  position: absolute;
-  z-index: 1;
-  top: 12%;
-  left: 18.5%;
-  transform: rotate(0deg); }
+.unlike-warning {
+  font-size: 12px;
+  margin: 5px; }

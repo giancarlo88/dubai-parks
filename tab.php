@@ -36,26 +36,26 @@ else {
 			</div>-->
 
 				<h2> <span class = "bolded">AMAZING</span> IS COMING </h2>
-					<p class="tcs-style">Crack the code for your chance to <span class = "txt-highlight"> WIN your Golden Ticket </span>to AMAZING!</p>				</p>
+					<p class="tcs-style">Crack the code for your chance to <span class = "txt-highlight"> WIN  </span> tickets to AMAZING!</p>				</p>
 				<a href="register.php"><img class = "fb-login" src = "./assets/images/login_btn.png"></a>
 			</p>
 			<p>&nbsp;</p>
 </div>
 </div>
 </div>
-</div>
-			<div class="container-tc-priv">
+
+
+<div class="tab__container-tc-priv">
 				<div class="tc">
 					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>
 				</div>
 
-				<div class="priv">
+				<div class="privacy">
 					<a target="_blank" href="<?php echo AppConfig::get('app_privacy'); ?>">Privacy Policy</a>
 				</div>
 			</div>
 		</div>
-
-
+</div>
 <?php
 
 require './template/footer.php';
