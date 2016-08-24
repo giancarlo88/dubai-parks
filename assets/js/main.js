@@ -162,11 +162,11 @@ $(".mysterynumber").on("focusout", function() {
 									howMany += usedFields.length;
 
 									if ( howMany === 3 )
-										self.location.href = 'thank-you.php?uid=' + formFields.uidField;
+										self.location.href = 'scratch.php?uid=' + formFields.uidField;
 								}
 								else {
 									console.log('Unknown error occured.');
-									self.location.href = 'thank-you.php?uid=' + formFields.uidField;
+									self.location.href = 'scratch.php?uid=' + formFields.uidField;
 								}
 							}
 						}
@@ -274,7 +274,7 @@ $(".mysterynumber").on("focusout", function() {
 						success: function(data) {
 							if (data && !data.error) {
 								if ( data.code && data.code === 201 ) {
-									self.location.href = 'thank-you.php?uid=' + control.data('uid')
+									self.location.href = 'scratch.php?uid=' + control.data('uid')
 									// if ( framework.max_recipients === 0 ) {
 									// }
 								}
@@ -388,7 +388,7 @@ $(".mysterynumber").on("focusout", function() {
 			twttrShareBtn = $('.ss-twitter'),
 			gplusShareBtn = $('.ss-gplus');
 
-		if ( ! fbShareBtn.length || ! gplusShareBtn.length ) return;
+		if ( ! fbShareBtn.length ) return;
 
 		// Facebook Share
 		fbShareBtn.on('click', function(e)	{

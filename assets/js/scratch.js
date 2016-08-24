@@ -1,15 +1,8 @@
 // canvasWidth = document.getElementById("js-container").style.width*0.3,
 // canvasHeight = document.getElementById("js-container").style.height*0.3,
-canvasWidth = $("#js-container").width()*0.3
-canvasHeight = $("#js-container").height()*0.3
+var collectedNumbers = 0
 
-
-imgLoadedWidth  = 0;
-imgLoadedHeight = 0;
-
-
-  
-  function scratchPad(canvasid, imgFile) {
+function scratchPad(canvasid, canvasWidth, canvasHeight) {
   
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
@@ -18,12 +11,9 @@ imgLoadedHeight = 0;
       brush        = new Image();
       image        = new Image(),
   // base64 Workaround because Same-Origin-Policy\
-  image.src = imgFile;
+  image.src = "scratch-texture-large.jpg";
 
-  image.onload = function() {
-    alert(this.width + 'x' + this.height);
-  }
-
+ 
   
   
   image.onload = function() {
@@ -32,11 +22,11 @@ imgLoadedHeight = 0;
     //document.querySelectorAll('.form')[0].style.visibility = 'visible';
   };
 
-  imgLoadedWidth = image.naturalWidth;
-  imgLoadedHeight = image.naturalHeight;
+  // imgLoadedWidth = image.naturalWidth;
+  // imgLoadedHeight = image.naturalHeight;
 
-  $(".canvas").attr("width", image.naturalWidth);
-  $(".canvas").attr("height", image.naturalHeight);
+  // $(".canvas").attr("width", image.naturalWidth);
+  // $(".canvas").attr("height", image.naturalHeight);
 
   brush.src = "circle.png"
   
@@ -93,7 +83,6 @@ imgLoadedHeight = 0;
   
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
-    console.log(filledInPixels)
     if (filledInPixels > 50) {
       canvas.parentNode.removeChild(canvas);
       getSecretNumber(canvas.id);
@@ -139,7 +128,9 @@ function getSecretNumber(id) {
 }
 
 function updateNumbers(tag, position) {
-  console.log(tag, position)
+  console.log(tag, position);
+  collectedNumbers+=1;
+
   switch (position) {
     case "2" :
     case "3" :
@@ -154,43 +145,72 @@ function updateNumbers(tag, position) {
       $(tag).fadeOut().html("6").fadeIn(1000);
       break;
   }
+
+  if (collectedNumbers>5) self.location.href = "./thank-you.php";
 }
 
 tmpImage = new Image();
 tmpImage.src = "scratch-texture-large.jpg";
 
 window.onresize = function() {
-  canvasWidth  = $("#js-container").width()*0.3;
-  canvasHeight = $("#js-container").height()*0.3;
-
-  counter = 0;
-
-  
-  console.log(tmpImage);
-
-  while (counter < 6) {
-    ctx = $(".canvas")[counter].getContext('2d');
-    ctx.canvas.width = canvasWidth;
-    ctx.canvas.height = canvasHeight;
-      ctx.drawImage(tmpImage, 0, 0, tmpImage.naturalWidth, tmpImage.naturalHeight, 0, 0, tmpImage.naturalWidth, tmpImage.naturalHeight);
-
-    counter++;
-  }
-    console.log(canvasWidth);
-    console.log(canvasHeight);
+  sizeScratchpad()
   }
 
 window.onload = function() {
- var scratchSize;
- console.log(screen.width)
- if (screen.width >= 800) 
- {scratchSize = "scratch-texture-large.jpg";
- }
+  sizeScratchpad();
+  scratchPad("js-canvas1", canvasWidth, canvasHeight);
+  scratchPad("js-canvas2", canvasWidth, canvasHeight);
+  scratchPad("js-canvas3", canvasWidth, canvasHeight);
+  scratchPad("js-canvas4", canvasWidth, canvasHeight);
+  scratchPad("js-canvas5", canvasWidth, canvasHeight);
+  scratchPad("js-canvas6", canvasWidth, canvasHeight);
+}
 
-  scratchPad("js-canvas1", scratchSize);
-  scratchPad("js-canvas2", scratchSize);
-  scratchPad("js-canvas3", scratchSize);
-  scratchPad("js-canvas4", scratchSize);
-  scratchPad("js-canvas5", scratchSize);
-  scratchPad("js-canvas6", scratchSize);
+function sizeScratchpad () {
+  
+  //Resizes the six scratchpad surfaces based on their 
+  //proporitions to the actual image background. 
+  //(The image is normally 800 px)
+  counter = 0;
+  while (counter < 6) {
+    canvasWidth  = parseInt($("#underlay").width())
+    canvasHeight = parseInt($("#underlay").height());
+    if (counter === 0) {
+      canvasWidth *= 280/800;
+      canvasHeight *= 280/800;
+    }
+    if (counter === 1) {
+      canvasWidth *= 210/800; 
+      canvasHeight *= 160/800;
+    }
+
+    if (counter === 2) {
+      canvasWidth *= 220/800
+      canvasHeight *= 210/800
+        }
+
+    if (counter === 3) {
+      canvasWidth *= 220/800;
+      canvasHeight *= 210/800;
+    }
+
+    if (counter === 4) {
+      canvasWidth *= 180/800;
+      canvasHeight *= 200/800 ;
+    }
+
+    if (counter === 5) {
+      canvasWidth *= 245/800;
+      canvasHeight *= 245/800;
+    }
+    ctx = $(".canvas")[counter].getContext('2d');
+    ctx.canvas.width = canvasWidth;
+    ctx.canvas.height = canvasHeight;
+    
+   
+    ctx.drawImage(tmpImage, 0, 0, 50, 50, 0, 0, canvasWidth, canvasHeight);
+
+    counter++;
+  }
+   
 }

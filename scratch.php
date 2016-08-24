@@ -40,7 +40,7 @@ require './template/header.php';
 	<canvas class="canvas" id="js-canvas4" ></canvas> 
 	<canvas class="canvas" id="js-canvas5" ></canvas> 
 	<canvas class="canvas" id="js-canvas6" ></canvas>
-	<img class = "underlay" src = "play_bg_underlay.png">
+	<img id = "underlay" class = "underlay" src = "play_bg_underlay.png">
 	</div>
 	</div>
 </div>

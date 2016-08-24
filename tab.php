@@ -45,11 +45,11 @@ else {
 </div>
 </div>
 			<div class="container-tc-priv">
-				<div class="col-xs-6 text-left tc-pp">
+				<div class="tc">
 					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>
 				</div>
 
-				<div class="col-xs-6 text-right tc-pp">
+				<div class="priv">
 					<a target="_blank" href="<?php echo AppConfig::get('app_privacy'); ?>">Privacy Policy</a>
 				</div>
 			</div>

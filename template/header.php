@@ -73,7 +73,7 @@ $thisPage;
 <body>
     <div class = "page-header">
     <img class = "dp-logo" src = "./assets/images/dp_logo_header.png">
-    <div class = "tc-logo"><img class = "tc-img" src = "./assets/images/tc_logo_header.png"></div>
+    <div class = "tc-logo"><img class = "tc-img" src = "./assets/images/tc_logo_footer2.png"></div>
         
     <div class = "navigation-container">
     <div class = "navigation">

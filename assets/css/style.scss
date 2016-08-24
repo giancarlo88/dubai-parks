@@ -103,8 +103,8 @@ padding-bottom: 5%;
 
 .container-tc-priv {
   width: 100%;
-  position: absolute;
-  bottom: 0
+  bottom: 0;
+  font-size: 14px;
 }
 
 .privacy {
@@ -142,9 +142,9 @@ body {
 
 .mysteryNumbers {
   text-align: center;
-  overflow: hidden;
   width: 100%;
   color: #eee;
+  white-space: nowrap;
   }
 
 @for $i from 1 through 6 {
@@ -233,6 +233,19 @@ body {
     color: #FFF;  
     background-color: rgba(50, 50, 50, 0.5);
 }
+
+.ty__overlay {
+  @extend .overlay;
+    position: absolute;
+    top:100px;
+    height: 100%;
+    min-height: 700px;
+    padding-top: 10%;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url("../images/bg_congratulations.png");
+    background-size: cover;
+  }
+
 
 .tc-img {
     width: 40px;
@@ -329,16 +342,14 @@ video {
   position: absolute;
   left: 0;
   right: 0;
-  margin: auto;
-  width: 60%;
-  height:60%;
-  min-height: 600px;
-  margin: 0 auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
   /*background: url("../../play_bg_underlay.png") no-repeat;
   *background-size: 80%;
   background-position: center center;
@@ -351,20 +362,26 @@ video {
 }
 
 .scratch-overlay {
-  position: absolute;
+ position: absolute;
   z-index: 2;
   pointer-events: none;
   left: 0;
-  right: 0;
- 
-  
+  right: 0; 
+}
+
+.scratch-overlay img {
+  width: 100%;
 }
 
 .underlay {
-  position: absolute;
-  top: 0;
-  pointer-events:none;
+top: 0;
+pointer-events: none;
+left: 0;
+right: 0;
+width: 100%;
 }
+
+
 
 .big-slash {
   font-size: 50px;
@@ -374,6 +391,14 @@ video {
   margin: 10px;
   vertical-align: middle;
 
+}
+
+
+.ty__bg-wrapper { 
+  background: url("../images/play_bg_with_parks.png") no-repeat;
+  background-position: center top;
+  background-size: 75%;
+  min-height: 800px;
 }
 
 .scratch__mystery-number {
@@ -390,9 +415,9 @@ video {
   text-align: center;
 }
 
-$heights: 18.6%, 56%, 83%, 82.1%, 56%, 20%;
-$lengths: 65%, 75.7%, 57.5%, 24.3%, 5.5%, 22%;
-$rotations: 35deg, 0deg, -35deg, 35deg, 0deg, -35deg;
+$heights: 7.6%, 42%, 61.1%, 60.1%, 41.5%, 12%;
+$lengths: 51%, 69%, 52%, 23%, 5.5%, 18.5%;
+$rotations: 0deg, 0deg, 0deg, 20deg, 0deg, 0deg;
 
 @for $i from 1 through 6{
     #js-canvas#{$i}{
@@ -402,6 +427,6 @@ $rotations: 35deg, 0deg, -35deg, 35deg, 0deg, -35deg;
         left: nth($lengths, $i); 
 
         
-        //transform: rotate(nth($rotations, $i))
+        transform: rotate(nth($rotations, $i))
     }
 }

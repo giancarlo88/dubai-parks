@@ -218,7 +218,7 @@ AppConfig::set( array(
 		/**
 		 * Developers local server address (No trailing slash!)
 		 */
-		'developer_server' => 'http://localhost',
+		'developer_server' => 'http://localhost/',
 
 
 		/**
