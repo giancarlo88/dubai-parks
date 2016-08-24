@@ -79,7 +79,7 @@ $uid = isset($_GET['uid']) && $_GET['uid'] ? (int) $_GET['uid'] : 0;
 			<p>&nbsp;</p>
 
 			<p class="text-center">
-				<a href="thank-you.php?uid=<?php echo $uid; ?>" class="btn-skip">SKIP</a>
+				<a href="scratch.php?uid=<?php echo $uid; ?>" class="btn-skip">SKIP</a>
 			</p>
 
 			<br/>
