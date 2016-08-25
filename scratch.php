@@ -1,5 +1,5 @@
 <?php
-$thisPage = "tab";
+$thisPage = "register";
 /**
  * Default tab page
  */
@@ -21,8 +21,8 @@ require './template/header.php';
 </div>
 	<div class="scratch__mystery-number-row">
 		<div class = "scratch__logo-number-container">
-			<img src = "./assets/images/motiongate_logo.png">
-			<div class = "scratch__mystery-number scratch__mystery-box1"><span class = "scratch__mystery-number-text" id = "scratch__mystery-number1">&nbsp;</span></div>
+			<img class = "mg-logo" src = "./assets/images/motiongate_logo.png">
+			<div class = "scratch__mystery-number scratch__mystery-box1"><span class = "scratch__mystery-number-text" id = "scratch__mystery-number1"></span></div>
 		</div>
 		<div class = "scratch__logo-number-container">
 			<img src = "./assets/images/bollywood_parks_logo.png">
@@ -52,7 +52,7 @@ require './template/header.php';
 	<div class = "s-wrapper">
 	
 	<div class="scratch-container" id="js-container">
-	<div class ="scratch-overlay"><img src = "play_bg_overlay.png"></div>
+	<div class ="scratch-overlay"><img id ="scratch-overlay" src = "play_bg_overlay.png"></div>
 	<canvas class="canvas" id="js-canvas1" ></canvas>
 	<canvas class="canvas" id="js-canvas2" ></canvas> 
 	<canvas class="canvas" id="js-canvas3" ></canvas> 

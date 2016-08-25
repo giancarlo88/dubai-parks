@@ -146,6 +146,7 @@ function updateNumbers(tag, position) {
   }
 
   if (collectedNumbers>5) {
+    $(".scratch-overlay").fadeOut("slow");
     setTimeout(function(){
       self.location.href = "./thank-you.php"
     }, 3000)

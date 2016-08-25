@@ -17,8 +17,7 @@ require './template/header.php';
 		<div class = "registration">
 			<div class="reg-instructions">
 				<div class = "steps">
-					<p><strong>1:</strong> PLEASE LIKE OUR FACEBOOK PAGE. 
-					</p>
+					<img src = "./assets/images/enterdetails1.png"> <span class = "step step1text">PLEASE LIKE OUR FACEBOOK PAGE.</span> 
 						<div class = "reg__button-container">
 							<span class="btn-fb-like">
 								<div class="fb-like" data-href="https://facebook.com/thomascook" data-layout="button" data-action="like" data-show-faces="false" data-share="false">
@@ -26,8 +25,8 @@ require './template/header.php';
 							</span>
 							<dd class="unlike-warning">You have unliked our Facebook page, please Like again.</dd>
 						</div>
-						<p class = "left"><strong>2:</strong> CONFIRM YOUR DETAILS:
-						</p> 
+						<img class = "step2" src = "./assets/images/enterdetails2.png"> <span class = "step">CONFIRM YOUR DETAILS:
+						</span> 
 						
 				</div>
 			</div>
@@ -57,7 +56,7 @@ require './template/header.php';
 						<div class = "reg__checkbox-container">
 							<div class="reg__checkbox">
 								<label>
-									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks
+									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks and Resorts
 								</label>
 							</div>
 							<div class="reg__checkbox">

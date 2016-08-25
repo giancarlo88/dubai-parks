@@ -11,6 +11,8 @@ $(".mysterynumber").on("focusout", function() {
 	}
 })
 
+var mnTries = 0;
+
 ;(function(root, factory)	{
 
 	// GIS = Get into Singapore
@@ -532,9 +534,9 @@ $(".mysterynumber").on("focusout", function() {
 				5: formFields.num5.val(),
 				6: formFields.num6.val()				
 			}
-			console.log(numbers);
-			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6])
-			console.log(combinedNumbers);
+			
+			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]);
+			
 			if ( formFields.firstNameField.val() == '' ) {
 				alert('First name is required.');
 				formFields.firstNameField.focus();
@@ -572,12 +574,20 @@ $(".mysterynumber").on("focusout", function() {
 			 {
 				alert ("Please enter numbers only.")
 			}
-			else if (combinedNumbers.length == 6 && combinedNumbers !== "011016") {
-				alert ("Sorry, your code is incorrect. Try again!")
+			else if (combinedNumbers.length == 6 && combinedNumbers !== "011016" && mnTries < 3) {
+				mnTries ++;
+				if (mnTries >= 3) {
+					return true
+				} else {
+				alert ("Sorry, your code is incorrect. Try again!");
+				}
+
 			}
 			else if (combinedNumbers == "011016") {
 				self.location.href = "./thank-you.php"
 			}
+
+			
  			else {
 				return true;
 			}

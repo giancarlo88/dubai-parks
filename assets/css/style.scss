@@ -3,8 +3,19 @@ $tc-orange: rgb(253, 173, 0);
 $dp-pink: #E1005C;
 $text-color: rgb(255, 255, 255);
 $header-color: #1E1025;
-$fonts: "klavika", Helvetica, sans-serif;
+$fonts: "klavika-regular", Helvetica, sans-serif;
+$bold-fonts: "klavika-bold", Helvetica, sans-serif;
 $border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0),rgb(236, 0, 4), rgb(247, 229, 0), rgb(0, 179, 181);
+
+@font-face {
+  font-family: "klavika-regular";
+  src: url("./webfonts/klavika-regular.otf")
+}
+
+@font-face {
+  font-family: "klavika-bold";
+  src: url("./webfonts/klavika-bold.otf")
+}
 
 a {
     text-decoration: none;
@@ -21,10 +32,10 @@ a {
   width: auto;
 }
 
-
 .bolded {
-    font-weight: bold; //Asset needed
+  font-family: $bold-fonts;
 }
+
 
 .button{
   @extend .reg-form;
@@ -33,6 +44,10 @@ a {
   border: 0;
  
 
+}
+
+.byline {
+  font-family: $bold-fonts;
 }
 
 .long-checkbox {
@@ -81,7 +96,8 @@ a {
 .tc-img {
 float: left;
 padding-left: 10px;
-height: 50px;
+height: 65px;
+margin-top: -10px;
 }
 
 ul {
@@ -120,6 +136,7 @@ li {
 .reg__button-container {
 text-align: center;
 padding: 2%;
+margin-top: -32px;
 }
 
 .tc {
@@ -166,9 +183,9 @@ body {
 .dp-logo {
     float: right;
     padding-right: 10px;
-    @media (max-width: 850px) {
-    height: 25px;
-  }
+      @media (max-width: 850px) {
+      height: 25px;
+      }
 }
 
 .mysteryNumbers {
@@ -192,15 +209,13 @@ body {
     }
 
 .page-header {
+  font-family: $bold-fonts;
   width: 100%;
   background-color: $header-color; 
   margin: 0;
   text-align: center;
   height: 50px;
   padding: 25px 0;
-  @media (max-width: 850px) {
-   height: 30px; 
-  }
 
 }
 
@@ -240,6 +255,8 @@ body {
 }
 
 .navigation { 
+
+  font-family: $bold-fonts;
   margin: 0 auto;
   position: absolute;
   width: 100%;
@@ -262,6 +279,11 @@ body {
     height: 225px;
     color: #FFF;  
     background-color: rgba(50, 50, 50, 0.5);
+    h2 {
+      font-family: $fonts;
+      font-weight: 100;
+    }
+
 }
 
 .ty__overlay {
@@ -270,9 +292,8 @@ body {
     top:100px;
     height: 100%;
     min-height: 700px;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url("../images/bg_congratulations.png");
-    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.001);
+    
   }
 
 
@@ -299,7 +320,7 @@ body {
 
 .reg-instructions {
   white-space: nowrap;
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
   font-size: 20px;
   @media (max-width: 850px) {
@@ -324,6 +345,7 @@ body {
   display: inline-block;
   text-align: center; 
   margin: 1%;
+  vertical-align: bottom;
   
   & img {
       width: 100px;
@@ -341,13 +363,32 @@ body {
   }
 }
 
+.step {
+  line-height: 2.5
+}
+
+
+.step1text {
+  margin-left: -70px;
+}
 
 .steps {
-  & p {
-    margin: 5px 0;
-
+  
+  img {
+    width: 120px;
+    vertical-align: top;
+    margin-left: 10px;
+    overflow: 0;
   }
-}
+  p {
+    margin: -15px 0;
+  }
+  .step2 {
+    width: 50px;
+  }
+  
+  }
+
 
 .sm-icon {
   height: 50px;
@@ -366,7 +407,9 @@ strong {
 }
 
 
-
+.mg-logo {
+  padding-bottom: 20px;
+}
 
 .tickboxes {
   margin: 0 auto;
@@ -398,6 +441,7 @@ video {
   text-align: center;
   margin: 0 auto;
   width: 50%;
+  min-width: 300px;
   /*background: url("../../play_bg_underlay.png") no-repeat;
   *background-size: 80%;
   background-position: center center;
@@ -445,10 +489,13 @@ width: 100%;
 }
 
 .ty__bg-wrapper { 
-  background: url("../images/play_bg_with_parks.png") no-repeat;
-  background-position: center -25%;
-  background-size: 75%;
+  background: url("../images/bg_congratulations.jpg") no-repeat;
+  background-position: 70% 55%;
   min-height: 800px;
+}
+
+.ty__date {
+  font-size: 50px;
 }
 
 .scratch__mystery-number {

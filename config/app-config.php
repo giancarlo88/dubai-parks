@@ -55,7 +55,7 @@ AppConfig::set( array(
 		 * this template. This image will appear in Facebook
 		 * share dialog and in Open Graph tags
 		 */
-		'app_image' => 'icon7.png',
+		'app_image' => 'bg-ring.jpg',
 
 
 		/**
@@ -105,7 +105,7 @@ AppConfig::set( array(
 		/**
 		 * Facebook application NameSpace
 		 */
-		'facebook_namespace' => 'tc-dubai-parks',
+		'facebook_namespace' => 'ticket-to-amazing',
 
 
 		/**
@@ -155,7 +155,7 @@ AppConfig::set( array(
 		/**
 		 * Tweet text
 		 */
-		'twitter_tweet' => 'I’ve entered to #WIN a holiday for 2 with @ThomasCookUK & £250 shopping spree from @OutfitFashionUK #ExoticHolidays',
+		'twitter_tweet' => '',
 
 
 		/**

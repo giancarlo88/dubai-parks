@@ -24,8 +24,7 @@ $last_page = true;
 			<h2>Congratulations!</h2>
 			<h2>You have cracked the code!</h2>
 			<h2><span class = "bolded">AMAZING</span> IS COMING.</h2>
-			<h2><span class = "txt-highlight">1/10/16</span></h2>
-			<br>
+			<h1><span class = "ty__date txt-highlight bolded">01/10/16</span></h1>
 			<p>Share for an additional entry into the prize draw</p>
 			<!--<p style="display: none" class="text-center">You have invited <?php echo isset($userTotalInvites) ? $userTotalInvites . ((int)$userTotalInvites === 1 ? ' friend' : ' friends' ) : '0 friends'; ?> and you now <span class="line-break">have <?php echo isset($userTotalEntries) ? $userTotalEntries . ((int)$userTotalEntries === 1 ? ' entry' : ' entries') : '0 entries'; ?>.</span></p>-->
 </div>
