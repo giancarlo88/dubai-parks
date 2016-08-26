@@ -4,7 +4,11 @@ $thisPage = "tcs";
 require './config.php';
 require './template/header.php';
 ?>
-		<div class="container">
+
+<div class = "ty__bg-wrapper">
+<h1>TBC</h1>
+</div>
+		<!--<div class="container">
 			<div class="col-sm-12">
 				<div class="page-header">
 					<h1>‘#ExoticHolidays’ Holiday Prize Draw</h1>
@@ -99,4 +103,6 @@ require './template/header.php';
 
 			</div>
 		</div>
+
+		-->
 </body></html>

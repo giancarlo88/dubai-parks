@@ -14,7 +14,7 @@ DBConfig::setHost('localhost');
 /**
  * Database name
  */
-DBConfig::setName('tc_dubai_parks');
+DBConfig::setName('thomascook');
 
 
 /**
@@ -32,7 +32,7 @@ DBConfig::setPassword('4Fb8JUrswjZ2');
 /**
  * Database table prefix
  */
-DBConfig::setTablePrefix('tc_dubai_parks');
+DBConfig::setTablePrefix('dubai_parks_');
 
 
 /**

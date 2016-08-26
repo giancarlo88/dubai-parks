@@ -11,6 +11,41 @@ $(".mysterynumber").on("focusout", function() {
 	}
 })
 
+ $(".mysterynumber").keyup(function () {
+        if (this.value.length == this.maxLength) {
+          $(this).next('.mysterynumber').focus();
+        }
+  });
+
+$(".sm-icon").on("click", function() {
+	setTimeout(function() {
+self.location.href = "http://www.dubaiparksandresorts.com"
+	}, 5000)
+})
+
+var scrollY = function (y) {
+    console.log(y)
+	if (window.jQuery) {
+        FB.Canvas.getPageInfo (function (pageInfo) {
+            $({ y: pageInfo.scrollTop })
+                .animate({
+                        y: y
+                    },
+                    {
+                        duration: 1000,
+                        step: function (offset) {
+                            FB.Canvas.scrollTo(0, offset);
+                    }
+                });
+        });
+    } else {
+        FB.Canvas.scrollTo(0, y);
+    }
+};
+
+var mnTries = 0;
+
+
 ;(function(root, factory)	{
 
 	// GIS = Get into Singapore
@@ -26,7 +61,7 @@ $(".mysterynumber").on("focusout", function() {
 	 */
 	var framework = {
 		version: '4.0.0',
-		fbappid: '1120374341352498',
+		fbappid: '1761519824086921',
 		max_recipients: 150,
 		exclude_ids: []
 	};
@@ -432,7 +467,7 @@ $(".mysterynumber").on("focusout", function() {
 	 */
 	framework.getUserPermissions = function(response) {
 
-		var getStartedBtn = $('.btn-getstarted');
+		var getStartedBtn = $('.fb-login');
 
 		if ( ! getStartedBtn.length ) return;
 
@@ -532,9 +567,9 @@ $(".mysterynumber").on("focusout", function() {
 				5: formFields.num5.val(),
 				6: formFields.num6.val()				
 			}
-			console.log(numbers);
-			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6])
-			console.log(combinedNumbers);
+			
+			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]);
+			
 			if ( formFields.firstNameField.val() == '' ) {
 				alert('First name is required.');
 				formFields.firstNameField.focus();
@@ -572,12 +607,23 @@ $(".mysterynumber").on("focusout", function() {
 			 {
 				alert ("Please enter numbers only.")
 			}
-			else if (combinedNumbers.length == 6 && combinedNumbers !== "011016") {
-				alert ("Sorry, your code is incorrect. Try again!")
+			else if (combinedNumbers.length == 6 && combinedNumbers !== "311016" && mnTries < 3) {
+				mnTries ++;
+				if (mnTries >= 3) {
+					return true
+				} else {
+				alert ("Sorry, your code is incorrect. Try again!");
+				}
+
 			}
-			else if (combinedNumbers == "011016") {
-				self.location.href = "./thank-you.php"
+			else if (combinedNumbers == "311016") {
+				scrollY(0);
+				setTimeout(function(){
+					self.location.href = "./thank-you.php"
+				}, 1000);
 			}
+
+			
  			else {
 				return true;
 			}
@@ -591,8 +637,8 @@ $(".mysterynumber").on("focusout", function() {
 			});
 
 			FB.Event.subscribe('edge.create', function(url, el)	{
-				if ( ! unlikeWarning.is(':hidden') )
-					unlikeWarning.fadeOut();
+				if ( ! unlikeWarning.is(':hidden') ){
+					unlikeWarning.fadeOut();}
 			});
 		}
 	};

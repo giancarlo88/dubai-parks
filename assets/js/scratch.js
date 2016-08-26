@@ -1,7 +1,25 @@
 // canvasWidth = document.getElementById("js-container").style.width*0.3,
 // canvasHeight = document.getElementById("js-container").style.height*0.3,
-var collectedNumbers = 0
+var scrollY = function (y) {
+    if (window.jQuery) {
+        FB.Canvas.getPageInfo (function (pageInfo) {
+            $({ y: pageInfo.scrollTop })
+                .animate({
+                        y: y
+                    },
+                    {
+                        duration: 1000,
+                        step: function (offset) {
+                            FB.Canvas.scrollTo(0, offset);
+                    }
+                });
+        });
+    } else {
+        FB.Canvas.scrollTo(0, y);
+    }
+};
 
+var collectedNumbers = 0
 function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   
   var isDrawing, lastPoint;
@@ -131,12 +149,14 @@ function updateNumbers(tag, position) {
   collectedNumbers+=1;
 
   switch (position) {
+    case "1":
+      $(tag).html("3").fadeIn(1000);
+      break;
     case "2" :
     case "3" :
     case "5" :
       $(tag).html("1").fadeIn(1000);
       break;
-    case "1":
     case "4":
       $(tag).html("0").fadeOut().fadeIn(1000);
       break;
@@ -146,8 +166,11 @@ function updateNumbers(tag, position) {
   }
 
   if (collectedNumbers>5) {
+    $(".scratch-overlay").fadeOut("slow");
+    scrollY(0);
     setTimeout(function(){
-      self.location.href = "./thank-you.php"
+      self.location.href = "./thank-you.php#"
+      
     }, 3000)
   };
 }
@@ -185,11 +208,11 @@ function sizeScratchpad () {
     
     if (counter === 1) {
       canvasWidth *= 280/800;
-      canvasHeight *= 280/800;
+      canvasHeight *= 250/800;
     }
     if (counter === 2) {
       canvasWidth *= 210/800; 
-      canvasHeight *= 160/800;
+      canvasHeight *= 155/800;
     }
 
     if (counter === 3) {
@@ -204,7 +227,7 @@ function sizeScratchpad () {
 
     if (counter === 5) {
       canvasWidth *= 180/800;
-      canvasHeight *= 200/800 ;
+      canvasHeight *= 190/800 ;
     }
     ctx = $(".canvas")[counter].getContext('2d');
     ctx.canvas.width = canvasWidth;
@@ -217,3 +240,4 @@ function sizeScratchpad () {
   }
    
 }
+

@@ -3,8 +3,19 @@ $tc-orange: rgb(253, 173, 0);
 $dp-pink: #E1005C;
 $text-color: rgb(255, 255, 255);
 $header-color: #1E1025;
-$fonts: "klavika", Helvetica, sans-serif;
+$fonts: "klavika-regular", Helvetica, sans-serif;
+$bold-fonts: "klavika-bold", Helvetica, sans-serif;
 $border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0),rgb(236, 0, 4), rgb(247, 229, 0), rgb(0, 179, 181);
+
+@font-face {
+  font-family: "klavika-regular";
+  src: url("./webfonts/klavika-regular.otf")
+}
+
+@font-face {
+  font-family: "klavika-bold";
+  src: url("./webfonts/klavika-bold.otf")
+}
 
 a {
     text-decoration: none;
@@ -21,10 +32,10 @@ a {
   width: auto;
 }
 
-
 .bolded {
-    font-weight: bold; //Asset needed
+  font-family: $bold-fonts;
 }
+
 
 .button{
   @extend .reg-form;
@@ -33,6 +44,10 @@ a {
   border: 0;
  
 
+}
+
+.byline {
+  font-family: $bold-fonts;
 }
 
 .long-checkbox {
@@ -69,6 +84,7 @@ a {
 .reg__checkbox label {
   display: block;
   margin-left: 20px;
+  text-shadow: 2px 2px $header-color;
 }
 
 .reg__checkbox input {
@@ -81,8 +97,14 @@ a {
 .tc-img {
 float: left;
 padding-left: 10px;
-height: 50px;
+width: 15%;
+max-width: 150px;
+min-width: 100px;
+margin-top: -10px;
+@media (max-width: 800px) {
+  margin-top: 0;
 }
+ }
 
 ul {
   list-style-type: none;
@@ -91,8 +113,11 @@ ul {
   overflow: hidden;
   text-align: center; 
   font-size: 26px;
-  @media (max-width: 850px) {
-    font-size: 16px;
+  @media (max-width: 875px) {
+  font-size: 16px;
+}
+  @media (max-width: 360px) {
+    font-size: 12px;
   }
 }
 
@@ -120,6 +145,7 @@ li {
 .reg__button-container {
 text-align: center;
 padding: 2%;
+margin-top: -32px;
 }
 
 .tc {
@@ -166,9 +192,11 @@ body {
 .dp-logo {
     float: right;
     padding-right: 10px;
-    @media (max-width: 850px) {
-    height: 25px;
-  }
+    width: 25%;
+    max-width: 200px;
+       @media (max-width: 850px) {
+      margin-top: 10px;
+      }
 }
 
 .mysteryNumbers {
@@ -176,7 +204,7 @@ body {
   width: 100%;
   color: #eee;
   white-space: nowrap;
-  margin: 5px 0;
+  margin: 15px 0;
   }
 
 @for $i from 1 through 6 {
@@ -192,15 +220,13 @@ body {
     }
 
 .page-header {
+  font-family: $bold-fonts;
   width: 100%;
   background-color: $header-color; 
   margin: 0;
   text-align: center;
   height: 50px;
   padding: 25px 0;
-  @media (max-width: 850px) {
-   height: 30px; 
-  }
 
 }
 
@@ -227,19 +253,35 @@ body {
 
 .mysterynumber {
   @extend .reg-form;
-  background-color: #000;
+  background-color: #FFF;
   text-align: center;
-  font-size: 20px;
+  font-size: 40px;
   margin: 0 auto;
-  border: 2px solid;
-  max-width: 40px;
+  border: 4px solid;
+  width: 60px;
+  height: 60px;
   padding: 0;
   border-radius: 0px;
-  color: #eee;  
+  color: #111;  
+  ::-moz-placeholder {
+    color:$header-color;
+  }
+  ::-webkit-input-placeholder {
+    color: $header-color;
+  }
+  ::-ms-input-placeholder {
+    color: $header-color;
+  }
+}
 
+.mn-message {
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 .navigation { 
+
+  font-family: $bold-fonts;
   margin: 0 auto;
   position: absolute;
   width: 100%;
@@ -259,27 +301,30 @@ body {
     top: 50px;
     width: 100%;
     font-size: 20px;
-    height: 225px;
+    height: 250px;
     color: #FFF;  
     background-color: rgba(50, 50, 50, 0.5);
+    h2 {
+      font-family: $fonts;
+      font-weight: 100;
+    }
+
 }
 
 .ty__overlay {
   @extend .overlay;
-    position: absolute;
-    top:100px;
+    top: 200px;
     height: 100%;
     min-height: 700px;
-    background-color: rgba(0, 0, 0, 0.8);
-    background-image: url("../images/bg_congratulations.png");
-    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.001);
+    
   }
 
 
 .registration {
   margin: 0 auto;
   width: 40%;
-  padding-top: 18%;
+  padding-top: 16%;
   @media (max-width: 800px) {
     width: 60%;
     padding-top: 30%;
@@ -288,6 +333,10 @@ body {
     width: 90%;
     padding-top: 5%;
     min-height: 0;
+  }
+
+  @media (max-width: 360px) {
+    width: 100%;
   }
 
 }
@@ -304,7 +353,9 @@ body {
   font-size: 20px;
   @media (max-width: 850px) {
   width: 100%;
+  font-size: 15px;
   }
+ 
 }
 
 .scratch__instructions  {
@@ -313,7 +364,7 @@ body {
   display: block;
   border: 2px solid $text-color;
   width: 60%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .scratch__mystery-number-text {
@@ -324,6 +375,7 @@ body {
   display: inline-block;
   text-align: center; 
   margin: 1%;
+  vertical-align: bottom;
   
   & img {
       width: 100px;
@@ -341,13 +393,32 @@ body {
   }
 }
 
+.step {
+  line-height: 2.5
+}
+
+
+.step1text {
+  margin-left: -70px;
+}
 
 .steps {
-  & p {
-    margin: 5px 0;
-
+  
+  img {
+    width: 120px;
+    vertical-align: top;
+    margin-left: 10px;
+    overflow: 0;
   }
-}
+  p {
+    margin: -15px 0;
+  }
+  .step2 {
+    width: 50px;
+  }
+  
+  }
+
 
 .sm-icon {
   height: 50px;
@@ -366,7 +437,9 @@ strong {
 }
 
 
-
+.mg-logo {
+  padding-bottom: 20px;
+}
 
 .tickboxes {
   margin: 0 auto;
@@ -381,8 +454,7 @@ video {
 }
 
 .fb-login {
-  width: 200px; 
-  padding: 1em;  
+  width: 250px; 
 }
 
 
@@ -398,6 +470,7 @@ video {
   text-align: center;
   margin: 0 auto;
   width: 50%;
+  min-width: 300px;
   /*background: url("../../play_bg_underlay.png") no-repeat;
   *background-size: 80%;
   background-position: center center;
@@ -445,10 +518,13 @@ width: 100%;
 }
 
 .ty__bg-wrapper { 
-  background: url("../images/play_bg_with_parks.png") no-repeat;
-  background-position: center -25%;
-  background-size: 75%;
+  background: url("../images/bg_congratulations2.jpg") no-repeat;
+  background-position: center 100%;
   min-height: 800px;
+}
+
+.ty__date {
+  font-size: 50px;
 }
 
 .scratch__mystery-number {
@@ -461,8 +537,8 @@ width: 100%;
 }
 
 
-$heights: 12%, 7.6%, 42%, 61.1%, 60.1%, 41.5%;
-$lengths: 18.5%, 51%, 69%, 52%, 23%, 5.5%;
+$heights: 12.6%, 12%, 43%, 61%, 59%, 41.5%;
+$lengths: 18.5%, 51%, 67%, 52%, 25%, 7.5%;
 $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 
 @for $i from 1 through 6{
@@ -480,4 +556,5 @@ $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 .unlike-warning {
   font-size: 12px;
   margin: 5px;
+  display: none;
 }
