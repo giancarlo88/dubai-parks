@@ -135,13 +135,13 @@ AppConfig::set( array(
 		/**
 		 * Facebook invite message
 		 */
-		'facebook_invite_message' => 'I’ve cracked the code to amazing! Try yourself for a chance to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php',
+		'facebook_invite_message' => 'I’ve cracked the code to amazing! Try yourself for a chance to WIN! apps.facebook.com/ticket-to-amazing',
 
 
 		/**
 		 * Facebook share message
 		 */
-		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php'
+		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > apps.facebook.com/ticket-to-amazing'
 	)
 );
 
@@ -155,7 +155,7 @@ AppConfig::set( array(
 		/**
 		 * Tweet text
 		 */
-		'twitter_tweet' => 'I’ve cracked the code to amazing. Enter to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php #amazingiscoming',
+		'twitter_tweet' => 'I’ve cracked the code to amazing. Enter to WIN! apps.facebook.com/ticket-to-amazing #amazingiscoming',
 
 
 		/**
