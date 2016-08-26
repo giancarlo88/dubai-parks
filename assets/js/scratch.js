@@ -1,7 +1,25 @@
 // canvasWidth = document.getElementById("js-container").style.width*0.3,
 // canvasHeight = document.getElementById("js-container").style.height*0.3,
-var collectedNumbers = 0
+var scrollY = function (y) {
+    if (window.jQuery) {
+        FB.Canvas.getPageInfo (function (pageInfo) {
+            $({ y: pageInfo.scrollTop })
+                .animate({
+                        y: y
+                    },
+                    {
+                        duration: 1000,
+                        step: function (offset) {
+                            FB.Canvas.scrollTo(0, offset);
+                    }
+                });
+        });
+    } else {
+        FB.Canvas.scrollTo(0, y);
+    }
+};
 
+var collectedNumbers = 0
 function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   
   var isDrawing, lastPoint;
@@ -147,8 +165,10 @@ function updateNumbers(tag, position) {
 
   if (collectedNumbers>5) {
     $(".scratch-overlay").fadeOut("slow");
+    scrollY(0);
     setTimeout(function(){
-      self.location.href = "./thank-you.php"
+      self.location.href = "./thank-you.php#"
+      
     }, 3000)
   };
 }
@@ -218,3 +238,4 @@ function sizeScratchpad () {
   }
    
 }
+

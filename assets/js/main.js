@@ -11,7 +11,40 @@ $(".mysterynumber").on("focusout", function() {
 	}
 })
 
+ $(".mysterynumber").keyup(function () {
+        if (this.value.length == this.maxLength) {
+          $(this).next('.mysterynumber').focus();
+        }
+  });
+
+$(".sm-icon").on("click", function() {
+	setTimeout(function() {
+self.location.href = "http://www.dubaiparksandresorts.com"
+	}, 5000)
+})
+
+var scrollY = function (y) {
+    console.log(y)
+	if (window.jQuery) {
+        FB.Canvas.getPageInfo (function (pageInfo) {
+            $({ y: pageInfo.scrollTop })
+                .animate({
+                        y: y
+                    },
+                    {
+                        duration: 1000,
+                        step: function (offset) {
+                            FB.Canvas.scrollTo(0, offset);
+                    }
+                });
+        });
+    } else {
+        FB.Canvas.scrollTo(0, y);
+    }
+};
+
 var mnTries = 0;
+
 
 ;(function(root, factory)	{
 
@@ -28,7 +61,7 @@ var mnTries = 0;
 	 */
 	var framework = {
 		version: '4.0.0',
-		fbappid: '1120374341352498',
+		fbappid: '1761519824086921',
 		max_recipients: 150,
 		exclude_ids: []
 	};
@@ -584,7 +617,10 @@ var mnTries = 0;
 
 			}
 			else if (combinedNumbers == "011016") {
-				self.location.href = "./thank-you.php"
+				scrollY(0);
+				setTimeout(function(){
+					self.location.href = "./thank-you.php"
+				}, 1000);
 			}
 
 			
@@ -601,8 +637,8 @@ var mnTries = 0;
 			});
 
 			FB.Event.subscribe('edge.create', function(url, el)	{
-				if ( ! unlikeWarning.is(':hidden') )
-					unlikeWarning.fadeOut();
+				if ( ! unlikeWarning.is(':hidden') ){
+					unlikeWarning.fadeOut();}
 			});
 		}
 	};

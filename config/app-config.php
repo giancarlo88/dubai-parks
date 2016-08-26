@@ -47,7 +47,7 @@ AppConfig::set( array(
 		 * Facebook application title
 		 * By default it appears in social sharing options
 		 */
-		'app_title' => 'Dubai Parks',
+		'app_title' => 'Ticket To Amazing',
 
 
 		/** Facebook application image file name
@@ -55,13 +55,13 @@ AppConfig::set( array(
 		 * this template. This image will appear in Facebook
 		 * share dialog and in Open Graph tags
 		 */
-		'app_image' => 'bg-ring.jpg',
+		'app_image' => 'share_card.jpg',
 
 
 		/**
 		 * Facebook application description
 		 */
-		'app_description' => 'Scratch for a chance to win a trip to Dubai Parks!',
+		'app_description' => 'Crack the code to win tickets to amazing.',
 
 		/**
 		 * Terms & Conditions URL
@@ -135,13 +135,13 @@ AppConfig::set( array(
 		/**
 		 * Facebook invite message
 		 */
-		'facebook_invite_message' => 'Invite your friends to WIN a trip to Dubai!',
+		'facebook_invite_message' => 'I’ve cracked the code to amazing! Try yourself for a chance to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php',
 
 
 		/**
 		 * Facebook share message
 		 */
-		'facebook_share_message' => 'I’ve entered WIN a trip to Dubai to visit Dubai Parks!'
+		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php'
 	)
 );
 
@@ -155,7 +155,7 @@ AppConfig::set( array(
 		/**
 		 * Tweet text
 		 */
-		'twitter_tweet' => '',
+		'twitter_tweet' => 'I’ve cracked the code to amazing. Enter to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php #amazingiscoming',
 
 
 		/**

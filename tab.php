@@ -27,7 +27,7 @@ else {
 	<div>
 		<div class = "inner">
 			<video playsinline autoplay muted loop class = "bgvid">
-				<source src = "assets/videos/dubai_parks.mov">
+				<source src = "assets/videos/dubai_parks.mp4">
 			</video>
 	
 			<div class="container overlay">
@@ -35,7 +35,7 @@ else {
 				<img src="./assets/images/dubai-logo-white.png" />
 			</div>-->
 
-				<h2> <span class = "bolded">AMAZING</span> IS COMING </h2>
+				<h2> <span class = "bolded">AMAZING</span> IS COMING... </h2>
 					<p class="byline">Crack the code for your chance to <span class = "txt-highlight"> WIN tickets to AMAZING!</span></p>
 				<a href="register.php"><img class = "fb-login" src = "./assets/images/login_btn.png"></a>
 			</p>

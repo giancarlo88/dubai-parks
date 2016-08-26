@@ -53,7 +53,8 @@ a {
 
 .reg__checkbox label {
   display: block;
-  margin-left: 20px; }
+  margin-left: 20px;
+  text-shadow: 2px 2px #1E1025; }
 
 .reg__checkbox input {
   display: inline-block;
@@ -63,8 +64,13 @@ a {
 .tc-img {
   float: left;
   padding-left: 10px;
-  height: 65px;
+  width: 15%;
+  max-width: 150px;
+  min-width: 100px;
   margin-top: -10px; }
+  @media (max-width: 800px) {
+    .tc-img {
+      margin-top: 0; } }
 
 ul {
   list-style-type: none;
@@ -73,9 +79,12 @@ ul {
   overflow: hidden;
   text-align: center;
   font-size: 26px; }
-  @media (max-width: 850px) {
+  @media (max-width: 875px) {
     ul {
       font-size: 16px; } }
+  @media (max-width: 360px) {
+    ul {
+      font-size: 12px; } }
 
 li {
   display: inline;
@@ -129,10 +138,12 @@ body {
 
 .dp-logo {
   float: right;
-  padding-right: 10px; }
+  padding-right: 10px;
+  width: 25%;
+  max-width: 200px; }
   @media (max-width: 850px) {
     .dp-logo {
-      height: 25px; } }
+      margin-top: 10px; } }
 
 .mysteryNumbers {
   text-align: center;
@@ -224,8 +235,7 @@ body {
     font-weight: 100; }
 
 .ty__overlay {
-  position: absolute;
-  top: 100px;
+  top: 200px;
   height: 100%;
   min-height: 700px;
   background-color: rgba(0, 0, 0, 0.001); }
@@ -243,6 +253,9 @@ body {
       width: 90%;
       padding-top: 5%;
       min-height: 0; } }
+  @media (max-width: 360px) {
+    .registration {
+      width: 100%; } }
 
 .register {
   color: #fff;
@@ -250,12 +263,13 @@ body {
 
 .reg-instructions {
   white-space: nowrap;
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
   font-size: 20px; }
   @media (max-width: 850px) {
     .reg-instructions {
-      width: 100%; } }
+      width: 100%;
+      font-size: 15px; } }
 
 .scratch__instructions {
   text-align: center;
@@ -263,7 +277,7 @@ body {
   display: block;
   border: 2px solid white;
   width: 60%;
-  margin: 0 auto; }
+  margin: 20px auto; }
 
 .scratch__mystery-number-text {
   display: none; }
@@ -379,7 +393,7 @@ video {
 
 .ty__bg-wrapper {
   background: url("../images/bg_congratulations.jpg") no-repeat;
-  background-position: 70% 55%;
+  background-position: center 100%;
   min-height: 800px; }
 
 .ty__date {
@@ -437,4 +451,5 @@ video {
 
 .unlike-warning {
   font-size: 12px;
-  margin: 5px; }
+  margin: 5px;
+  display: none; }

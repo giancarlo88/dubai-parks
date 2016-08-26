@@ -5,7 +5,7 @@
  */
 
 $shareCopies = array(
-		'video_share_message' => 'Enter the #GetIntoSingapore quiz competition to WIN an amazing holiday to Singapore with Thomas Cook. #Singapore50'
+		'video_share_message' => 'I’ve cracked the code to amazing. Enter to WIN. #tickettoamazing'
 	);
 
 $links = array(
@@ -13,8 +13,8 @@ $links = array(
 		'tc_airlines' => 'http://thomascookairlines.com',
 		'moonpalace_link' => 'http://www.moonpalacecancun.com/',
 		'outfit_link' => 'http://www.outfitfashion.com/',
-		'website_link' => 'https://apps.facebook.com/tc-win-mexico',
-		'twitter_url' => 'https://apps.facebook.com/tc-win-mexico'
+		'website_link' => 'https://apps.facebook.com/ticket-to-amazing',
+		'twitter_url' => 'https://apps.facebook.com/ticket-to-amazing'
 	);
 
 AppConfig::set($shareCopies);
