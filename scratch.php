@@ -52,14 +52,14 @@ require './template/header.php';
 	<div class = "s-wrapper">
 	
 	<div class="scratch-container" id="js-container">
-	<div class ="scratch-overlay"><img id ="scratch-overlay" src = "play_bg_overlay.png"></div>
+	<div class ="scratch-overlay"><img id ="scratch-overlay" src = "overlay_v2.png"></div>
 	<canvas class="canvas" id="js-canvas1" ></canvas>
 	<canvas class="canvas" id="js-canvas2" ></canvas> 
 	<canvas class="canvas" id="js-canvas3" ></canvas> 
 	<canvas class="canvas" id="js-canvas4" ></canvas> 
 	<canvas class="canvas" id="js-canvas5" ></canvas> 
 	<canvas class="canvas" id="js-canvas6" ></canvas>
-	<img id = "underlay" class = "underlay" src = "play_bg_underlay.png">
+	<img id = "underlay" class = "underlay" src = "underlay_v2.png">
 	</div>
 	</div>
 </div>

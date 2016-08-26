@@ -13,8 +13,8 @@ $links = array(
 		'tc_airlines' => 'http://thomascookairlines.com',
 		'moonpalace_link' => 'http://www.moonpalacecancun.com/',
 		'outfit_link' => 'http://www.outfitfashion.com/',
-		'website_link' => 'https://apps.facebook.com/ticket-to-amazing',
-		'twitter_url' => 'https://apps.facebook.com/ticket-to-amazing'
+		'website_link' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php',
+		'twitter_url' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php'
 	);
 
 AppConfig::set($shareCopies);

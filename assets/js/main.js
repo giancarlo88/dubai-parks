@@ -467,7 +467,7 @@ var mnTries = 0;
 	 */
 	framework.getUserPermissions = function(response) {
 
-		var getStartedBtn = $('.btn-getstarted');
+		var getStartedBtn = $('.fb-login');
 
 		if ( ! getStartedBtn.length ) return;
 
@@ -607,7 +607,7 @@ var mnTries = 0;
 			 {
 				alert ("Please enter numbers only.")
 			}
-			else if (combinedNumbers.length == 6 && combinedNumbers !== "011016" && mnTries < 3) {
+			else if (combinedNumbers.length == 6 && combinedNumbers !== "311016" && mnTries < 3) {
 				mnTries ++;
 				if (mnTries >= 3) {
 					return true
@@ -616,7 +616,7 @@ var mnTries = 0;
 				}
 
 			}
-			else if (combinedNumbers == "011016") {
+			else if (combinedNumbers == "311016") {
 				scrollY(0);
 				setTimeout(function(){
 					self.location.href = "./thank-you.php"

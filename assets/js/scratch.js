@@ -149,12 +149,14 @@ function updateNumbers(tag, position) {
   collectedNumbers+=1;
 
   switch (position) {
+    case "1":
+      $(tag).html("3").fadeIn(1000);
+      break;
     case "2" :
     case "3" :
     case "5" :
       $(tag).html("1").fadeIn(1000);
       break;
-    case "1":
     case "4":
       $(tag).html("0").fadeOut().fadeIn(1000);
       break;
@@ -206,11 +208,11 @@ function sizeScratchpad () {
     
     if (counter === 1) {
       canvasWidth *= 280/800;
-      canvasHeight *= 280/800;
+      canvasHeight *= 250/800;
     }
     if (counter === 2) {
       canvasWidth *= 210/800; 
-      canvasHeight *= 160/800;
+      canvasHeight *= 155/800;
     }
 
     if (counter === 3) {
@@ -225,7 +227,7 @@ function sizeScratchpad () {
 
     if (counter === 5) {
       canvasWidth *= 180/800;
-      canvasHeight *= 200/800 ;
+      canvasHeight *= 190/800 ;
     }
     ctx = $(".canvas")[counter].getContext('2d');
     ctx.canvas.width = canvasWidth;

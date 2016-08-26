@@ -37,6 +37,7 @@ else {
 
 				<h2> <span class = "bolded">AMAZING</span> IS COMING... </h2>
 					<p class="byline">Crack the code for your chance to <span class = "txt-highlight"> WIN tickets to AMAZING!</span></p>
+					<p>Login with Facebook to get started.</p>
 				<a href="register.php"><img class = "fb-login" src = "./assets/images/login_btn.png"></a>
 			</p>
 			<p>&nbsp;</p>
