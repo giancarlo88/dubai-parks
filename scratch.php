@@ -16,7 +16,7 @@ require './template/header.php';
 <div class="app-wrapper">
 <div class = "scratch__instructions">
 		<p>SCRATCH EACH PART OF AMAZING TO <span class = "txt-highlight">CRACK THE CODE</span>. 
-		ONCE ALL <span class = "bold">6 NUMBERS</span> HAVE BEEN REVEALED YOU WILL 
+		ONCE ALL <span class = "bolded">6 NUMBERS</span> HAVE BEEN REVEALED YOU WILL 
 		THEN BE ENTERED INTO THE PRIZE DRAW.
 </div>
 	<div class="scratch__mystery-number-row">

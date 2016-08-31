@@ -55,7 +55,7 @@ AppConfig::set( array(
 		 * this template. This image will appear in Facebook
 		 * share dialog and in Open Graph tags
 		 */
-		'app_image' => 'share_card.png',
+		'app_image' => 'share_card.jpg',
 
 
 		/**
@@ -135,13 +135,13 @@ AppConfig::set( array(
 		/**
 		 * Facebook invite message
 		 */
-		'facebook_invite_message' => 'I’ve cracked the code to amazing! Try yourself for a chance to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php',
+		'facebook_invite_message' => 'I’ve cracked the code to amazing! Try yourself for a chance to WIN! http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php',
 
 
 		/**
 		 * Facebook share message
 		 */
-		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php'
+		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php'
 	)
 );
 

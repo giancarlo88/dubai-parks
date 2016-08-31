@@ -34,7 +34,7 @@ elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confirm' )
 	$phone = isset($_POST['phone']) && $_POST['phone'] ? $_POST['phone'] : '';
 	$fbid = isset($_POST['fbid']) && $_POST['fbid'] ? $_POST['fbid'] : '';
 	$tc_subscription = isset($_POST['tc_subscription']) && $_POST['tc_subscription'] === 'on' ? true : false;
-	$outfit_subscription = isset($_POST['outfit_subscription']) && $_POST['outfit_subscription'] === 'on' ? true : false;
+	$dubaiparks_subscription = isset($_POST['dubaiparks_subscription']) && $_POST['dubaiparks_subscription'] === 'on' ? true : false;
 
 	if ( ! empty($cabacha) ) {
 		$error = 'Potential bot detected from IP: ' . AppFunction::getIP();
@@ -80,7 +80,7 @@ elseif ( isset($_POST['submit']) && strtolower($_POST['submit']) === 'confirm' )
 				$user->email = $email;
 				$user->phone = $phone;
 				$user->tc_subscription = $tc_subscription;
-				$user->outfit_subscription = $outfit_subscription;
+				$user->dubaiparks_subscription = $dubaiparks_subscription;
 				$user->from_mobile = $detect->isMobile();
 				$user->from_tablet = $detect->isTablet();
 

@@ -56,7 +56,7 @@ require './template/header.php';
 						<div class = "reg__checkbox-container">
 							<div class="reg__checkbox">
 								<label>
-									<input type="checkbox" checked name="outfit_subscription" id="outfitSubscriptionField"> I want to receive emails from Dubai Parks and Resorts
+									<input type="checkbox" checked name="dubaiparks_subscription" id="dubaiparksSubscriptionField"> I want to receive emails from Dubai Parks and Resorts
 								</label>
 							</div>
 							<div class="reg__checkbox">
@@ -71,14 +71,15 @@ require './template/header.php';
 				
 
 					<div class = "reg__btn-container">
-						<!--<div class="text-center">
+						<div class="text-center">
 							<input type="text" class="app-cabacha" name="cabacha_<?php echo sha1(time()); ?>" value="">
 							<input type="hidden" name="cabacha" value="cabacha_<?php echo sha1(time()); ?>">
-							<input type="hidden" name="fbid" value="" id="fbidField"> -->
+							<input type="hidden" name="fbid" value="" id="fbidField">
 							<input type="submit" name="submit" value="Confirm" id="reg__submitBtn" class="button">
-					
+
 						</div> 
 					</form>
+					</div>
 					<div class="reg__container-tc-priv">
 				<div class="tc">
 					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>

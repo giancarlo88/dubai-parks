@@ -20,7 +20,7 @@ $(".mysterynumber").on("focusout", function() {
 $(".sm-icon").on("click", function() {
 	setTimeout(function() {
 self.location.href = "http://www.dubaiparksandresorts.com"
-	}, 5000)
+	}, 8000)
 })
 
 var scrollY = function (y) {

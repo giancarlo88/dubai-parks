@@ -11,10 +11,9 @@ $shareCopies = array(
 $links = array(
 		'tc_link' => 'http://bit.ly/1HNca5w',
 		'tc_airlines' => 'http://thomascookairlines.com',
-		'moonpalace_link' => 'http://www.moonpalacecancun.com/',
-		'outfit_link' => 'http://www.outfitfashion.com/',
-		'website_link' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php',
-		'twitter_url' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_gt/tab.php'
+		'dubai_parks_link' => 'http://www.dubaiparks.com/en',
+		'website_link' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php',
+		'twitter_url' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php'
 	);
 
 AppConfig::set($shareCopies);

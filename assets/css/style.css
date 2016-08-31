@@ -6,6 +6,9 @@
   font-family: "klavika-bold";
   src: url("./webfonts/klavika-bold.otf"); }
 
+.app-cabacha {
+  display: none; }
+
 a {
   text-decoration: none;
   color: white; }
@@ -24,7 +27,7 @@ a {
   background: #fdad00;
   border: 0; }
 
-.byline {
+.tab_byline {
   font-family: "klavika-bold", Helvetica, sans-serif; }
 
 .long-checkbox {
@@ -402,8 +405,9 @@ video {
   text-align: center; }
 
 .ty__bg-wrapper {
-  background: url("../images/bg_congratulations2.jpg") no-repeat;
-  background-position: center 100%;
+  background: url("../images/bg_congratulations.jpg") no-repeat;
+  background-position: center;
+  background-size: 60%;
   min-height: 800px; }
 
 .ty__date {
