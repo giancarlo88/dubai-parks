@@ -42,7 +42,7 @@ $last_page = true;
 							>
 
 							<span>
-								<img class="sm-icon" src = "./assets/images/fb_icon.png">
+								<img class="ty__sm-icon" src = "./assets/images/fb_icon.png">
 							</span>
 						</a>
 					</li>
@@ -50,7 +50,7 @@ $last_page = true;
 						<a class="ss-twitter" href="https://twitter.com/intent/tweet?text=<?php echo urlencode(AppConfig::get('twitter_tweet')); ?>&url=<?php echo urlencode(AppConfig::get('twitter_url')); ?>">
 							
 							<span>
-								<img class="sm-icon sm-twitter" src = "./assets/images/twitter_icon.png">
+								<img class="ty__sm-icon sm-twitter" src = "./assets/images/twitter_icon.png">
 							</span>
 						</a>
 					</li>

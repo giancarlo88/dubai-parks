@@ -141,7 +141,7 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
 
 function getSecretNumber(id) {
   var position = id.charAt(id.length-1);
-  var idTag = "#scratch__mystery-number" + position;
+  var idTag = "#scr__mystery-number" + position;
   updateNumbers(idTag, position);
 }
 
@@ -166,7 +166,7 @@ function updateNumbers(tag, position) {
   }
 
   if (collectedNumbers>5) {
-    $(".scratch-overlay").fadeOut("slow");
+    $(".scr__scratch-overlay").fadeOut("slow");
     scrollY(0);
     setTimeout(function(){
       self.location.href = "./thank-you.php#"
@@ -199,8 +199,8 @@ function sizeScratchpad () {
   //(The image is normally 800 px)
   counter = 0;
   while (counter < 6) {
-    canvasWidth  = parseInt($("#underlay").width())
-    canvasHeight = parseInt($("#underlay").height());
+    canvasWidth  = parseInt($("#scr__scratch-underlay").width())
+    canvasHeight = parseInt($("#scr__scratch-underlay").height());
      if (counter === 0) {
       canvasWidth *= 245/800;
       canvasHeight *= 245/800;
@@ -229,7 +229,7 @@ function sizeScratchpad () {
       canvasWidth *= 180/800;
       canvasHeight *= 190/800 ;
     }
-    ctx = $(".canvas")[counter].getContext('2d');
+    ctx = $(".scr__canvas")[counter].getContext('2d');
     ctx.canvas.width = canvasWidth;
     ctx.canvas.height = canvasHeight;
     

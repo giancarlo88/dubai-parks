@@ -1,23 +1,23 @@
-$(".mysterynumber").on("focus", function () {
+$(".reg__mystery-number-form").on("focus", function () {
 	if ($(this).val() === "" && $(this).attr("placeholder", "?")) 
 	{
 	$(this).removeAttr("placeholder");
 	}
 })
 
-$(".mysterynumber").on("focusout", function() {
+$(".reg__mystery-number-form").on("focusout", function() {
 	if ($(this).val() === "" && !$(this).attr("placeholder", "?")){
 		$(this).attr("placeholder", "?")
 	}
 })
 
- $(".mysterynumber").keyup(function () {
+ $(".reg__mystery-number-form").keyup(function () {
         if (this.value.length == this.maxLength) {
-          $(this).next('.mysterynumber').focus();
+          $(this).next('.reg__mystery-number-form').focus();
         }
   });
 
-$(".sm-icon").on("click", function() {
+$(".ty__sm-icon").on("click", function() {
 	setTimeout(function() {
 self.location.href = "http://www.dubaiparksandresorts.com"
 	}, 8000)
@@ -467,7 +467,7 @@ var mnTries = 0;
 	 */
 	framework.getUserPermissions = function(response) {
 
-		var getStartedBtn = $('.fb-login');
+		var getStartedBtn = $('.tab__fb-login');
 
 		if ( ! getStartedBtn.length ) return;
 

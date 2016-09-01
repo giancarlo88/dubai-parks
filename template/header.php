@@ -71,13 +71,13 @@ $thisPage;
 
 </head>
 <body>
-    <div class = "page-header">
-    <img class = "tc-img" src = "./assets/images/tc_logo_175.png">
-    <img class = "dp-logo" src = "./assets/images/dp_logo_header.png">
+    <div class = "hd__page-header">
+    <img class = "hd__tc-logo" src = "./assets/images/tc_logo_175.png">
+    <img class = "hd__dp-logo" src = "./assets/images/dp_logo_header.png">
    
         
-    <div class = "navigation-container">
-    <div id = "navigation" class = "navigation">
+    <div class = "hd__navigation-container">
+    <div id = "hd__navigation" class = "hd__navigation">
     <ul>
     <li <?php if ($thisPage == 'tab') {echo "class = 'currentPage'";}?>><a href = "tab.php">HOME</a></li> |
         <li <?php if ($thisPage == "register") {echo "class = 'currentPage'";}?>><a href = "register.php">ENTER</a></li> |
