@@ -80,7 +80,7 @@ $thisPage;
     <div id = "hd__navigation" class = "hd__navigation">
     <ul>
     <li <?php if ($thisPage == 'tab') {echo "class = 'currentPage'";}?>><a href = "tab.php">HOME</a></li> |
-        <li <?php if ($thisPage == "register") {echo "class = 'currentPage'";}?>><a href = "register.php">ENTER</a></li> |
+        <li <?php if ($thisPage == "register") {echo "class = 'currentPage'";}?>><a class = "hd__register" href = "register.php">ENTER</a></li> |
         <li <?php if ($thisPage == "tcs") {echo "class = 'currentPage'";}?>><a href = "terms-conditions.php">Ts & Cs</a></li>
     </ul>
     </div>

@@ -197,7 +197,7 @@ li {
 video {
     width: 100%;
     display: block;
-    background: url("../images/bg-ring.jpg") no-repeat center;
+    background: url("../images/bg_ring.jpg") no-repeat center;
 }
 
 //Register Page Elements
@@ -436,7 +436,7 @@ margin-top: -32px;
 
   @media (max-width: 800px){
   margin: 10px 1px;
-    & .scratch__mystery-number {
+    & .scr__mystery-number {
       max-width: 40px
     }
     & img {
@@ -515,7 +515,7 @@ width: 100%;
 }
 
 
-$heights: 12.6%, 12%, 43%, 61%, 59%, 41.5%;
+$heights: 12.7%, 12%, 43%, 61%, 59%, 43%;
 $lengths: 18.5%, 51%, 67%, 52%, 25%, 7.5%;
 $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 

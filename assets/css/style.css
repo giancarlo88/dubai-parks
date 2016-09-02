@@ -149,7 +149,7 @@ li {
 video {
   width: 100%;
   display: block;
-  background: url("../images/bg-ring.jpg") no-repeat center; }
+  background: url("../images/bg_ring.jpg") no-repeat center; }
 
 .reg__long-checkbox {
   display: inline-block; }
@@ -348,7 +348,7 @@ video {
   @media (max-width: 800px) {
     .scr__logo-number-container {
       margin: 10px 1px; }
-      .scr__logo-number-container .scratch__mystery-number {
+      .scr__logo-number-container .scr__mystery-number {
         max-width: 40px; }
       .scr__logo-number-container img {
         display: none; } }
@@ -414,7 +414,7 @@ video {
 #js-canvas1 {
   position: absolute;
   z-index: 1;
-  top: 12.6%;
+  top: 12.7%;
   left: 18.5%;
   transform: rotate(0deg); }
 
@@ -449,7 +449,7 @@ video {
 #js-canvas6 {
   position: absolute;
   z-index: 1;
-  top: 41.5%;
+  top: 43%;
   left: 7.5%;
   transform: rotate(0deg); }
 
