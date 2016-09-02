@@ -499,7 +499,7 @@ var mnTries = 0;
 
 		if ( ! getStartedBtn.length ) return;
 
-		getStartedBtn.on('click', function(e)	{
+		$(document).on('click', '.tab__fb-login, .hd__register', function(e)	{
 			var $this = $(this);
 
 			if ( response && response.status === 'connected' ) {
