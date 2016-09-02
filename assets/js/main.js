@@ -23,34 +23,6 @@ self.location.href = "http://www.dubaiparksandresorts.com"
 	}, 8000)
 })
 
-function fbStart(tag) {
-	var getStartedBtn = $(tag);
-
-		if ( ! getStartedBtn.length ) return;
-
-		getStartedBtn.on('click', function(e)	{
-			var $this = $(this);
-
-			if ( response && response.status === 'connected' ) {
-				FB.api('/me', function(info)	{
-					return self.location.href = 'register.php?fbid=' + info.id
-				});
-			}
-			else {
-				framework.fbLogin(function(response)	{
-					if ( response && response.status === 'connected' ) {
-						FB.api('/me', function(info)	{
-							return self.location.href = 'register.php?fbid=' + info.id
-						});
-					}
-				});
-			}
-
-			return e.preventDefault();
-		});
-
-}
-
 var scrollY = function (y) {
     console.log(y)
 	if (window.jQuery) {
@@ -497,7 +469,7 @@ var mnTries = 0;
 
 		var getStartedBtn = $('.tab__fb-login');
 
-		if ( ! getStartedBtn.length ) return;
+		// if ( ! getStartedBtn.length ) return;
 
 		$(document).on('click', '.tab__fb-login, .hd__register', function(e)	{
 			var $this = $(this);
