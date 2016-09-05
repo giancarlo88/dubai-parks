@@ -257,7 +257,12 @@ margin-top: -32px;
 
 .reg__container-tc-priv {
   @extend .tab__container-tc-priv;
-  position: absolute;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+form {
+  padding: 5px;
 }
 
 .reg__form-container {
@@ -457,15 +462,15 @@ margin-top: -32px;
   position: absolute;
   left: 0;
   right: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 300px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  text-align: center;
-  margin: 0 auto;
-  width: 50%;
-  min-width: 300px;
   /*background: url("../../play_bg_underlay.png") no-repeat;
   *background-size: 80%;
   background-position: center center;
