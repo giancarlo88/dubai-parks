@@ -12,8 +12,8 @@ $links = array(
 		'tc_link' => 'http://bit.ly/1HNca5w',
 		'tc_airlines' => 'http://thomascookairlines.com',
 		'dubai_parks_link' => 'http://www.dubaiparks.com/en',
-		'website_link' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php',
-		'twitter_url' => 'http://united-agency-server.co.uk/thomascook/dubai_parks_tta/tab.php'
+		'website_link' => 'http://unitedapps.co/ticket-to-amazing',
+		'twitter_url' => 'http://unitedapps.co/ticket-to-amazing'
 	);
 
 AppConfig::set($shareCopies);

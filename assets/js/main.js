@@ -24,7 +24,6 @@ self.location.href = "http://www.dubaiparksandresorts.com"
 })
 
 var scrollY = function (y) {
-    console.log(y)
 	if (window.jQuery) {
         FB.Canvas.getPageInfo (function (pageInfo) {
             $({ y: pageInfo.scrollTop })

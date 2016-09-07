@@ -56,10 +56,8 @@ $last_page = true;
 					</li>
 				</ul>
 			</div>
-		</div>
-	</div>
-</div>
-<div class="container-tc-priv">
+		
+<div class="ty__container-tc-priv">
 				<div class="tc">
 					<a target="_blank" href="<?php echo AppConfig::get('app_terms'); ?>">Terms &amp; Conditions</a>
 				</div>

@@ -94,6 +94,8 @@ min-width: 100px;
 margin-top: -10px;
 @media (max-width: 800px) {
   margin-top: 0;
+  max-width: 100px;
+  min-width: 75px
 }
  }
 
@@ -104,6 +106,7 @@ margin-top: -10px;
     max-width: 200px;
        @media (max-width: 850px) {
       margin-top: 10px;
+      width: 20%
       }
 }
 
@@ -166,6 +169,14 @@ li {
       position: relative;
 }
 
+.tab__mobile-bg {
+  min-height: 500px;
+  min-width: 200px;
+  background: url("../images/movie_poster.gif") no-repeat center;
+  background-size: 100%;
+  background-position: top; 
+}
+
 .tab__overlay {
     text-align: center;
     position: absolute;
@@ -175,6 +186,7 @@ li {
     font-size: 20px;
     height: 250px;
     color: #FFF;  
+    padding: 10px 0;
     background-color: rgba(50, 50, 50, 0.5);
     h2 {
       font-family: $fonts;
@@ -197,7 +209,7 @@ li {
 video {
     width: 100%;
     display: block;
-    background: url("../images/bg_ring.jpg") no-repeat center;
+    //background: url("../images/bg_ring.jpg") no-repeat center;
 }
 
 //Register Page Elements
@@ -258,7 +270,7 @@ margin-top: -32px;
 .reg__container-tc-priv {
   @extend .tab__container-tc-priv;
   position: relative;
-  padding-bottom: 10px;
+  padding: 20px 0;
 }
 
 form {
@@ -376,6 +388,7 @@ form {
   min-width: 100px;
   color: #eee;
   cursor: pointer;
+  -webkit-appearance: button;
 }
 
 .reg__unlike-warning {
@@ -414,6 +427,12 @@ form {
 .scr__canvas {
   max-width: 1024px;
   width: auto;
+   -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 
 .scr__instructions  {
@@ -483,6 +502,11 @@ form {
   pointer-events: none;
   left: 0;
   right: 0; 
+   -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .scr__scratch-overlay img {
@@ -495,6 +519,11 @@ pointer-events: none;
 left: 0;
 right: 0;
 width: 100%;
+ -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .scr__big-slash {
@@ -574,6 +603,11 @@ $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 
 .ty__mg-logo {
   padding-bottom: 20px;
+}
+
+.ty__container-tc-priv {
+  @extend .reg__container-tc-priv;
+  bottom: -100px;
 }
 
 // .tickboxes {

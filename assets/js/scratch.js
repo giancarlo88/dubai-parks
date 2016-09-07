@@ -1,7 +1,11 @@
-// canvasWidth = document.getElementById("js-container").style.width*0.3,
-// canvasHeight = document.getElementById("js-container").style.height*0.3,
+var canvasWidth, canvasHeight;
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
+var isSmallScreen = false
+// if (window.screen.width < 600) {
+//   isSmallScreen = true
+// }
+$(".s-wrapper").bind("touchmove",function(e) {e.preventDefault()});
 
 var scrollY = function (y) {
     if (window.jQuery) {
@@ -25,7 +29,7 @@ var scrollY = function (y) {
 
 var collectedNumbers = 0
 function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
-  
+  var isScratched = false;
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
       canvas       = document.getElementById(canvasid),
@@ -71,11 +75,7 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   // but might lead to inaccuracy
   function getFilledInPixels(stride) {
     if (!stride || stride < 1) { stride = 1; }
-    if (isAndroid) {
-      var pixels = ctx.getImageData(0, 0, 200, 200)
-    } else {
       var pixels   = ctx.getImageData(0, 0, canvasWidth, canvasHeight)
-    }
       var pdata    = pixels.data,
         l        = pdata.length,
         total    = (l / stride),
@@ -96,22 +96,34 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
     if (canvas.offsetParent !== undefined) {
       do {
         offsetX += canvas.offsetLeft;
-        offsetY += canvas.offsetTop;      } 
+        offsetY += canvas.offsetTop;      
+      } 
         while ((canvas = canvas.offsetParent));
     }
     
     mx = (e.pageX || e.touches[0].clientX) - offsetX;
-    my = (e.pageY || e.touches[0].clientY) - offsetY;
     
+    if (isSmallScreen){
+    my = (e.pageY || e.touches[0].clientY) - offsetY+200;
+    }
+    else {
+      my = (e.pageY || e.touches[0].clientY) - offsetY
+    }
     return {x: mx, y: my};
   }
+
+  
   
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
     if (filledInPixels > pixelThreshold) {
-      canvas.parentNode.removeChild(canvas);
-      getSecretNumber(canvas.id);
+      if (!isScratched) {
+        getSecretNumber(canvas.id);
+        isScratched = true;
+      }
+    
     }
+    
   }
   
   function handleMouseDown(e) {
@@ -120,11 +132,7 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   }
 
   function handleMouseMove(e) {
-    
-    if (!isAndroid) {
-    if (!isDrawing) { return; }
-    }
-    e.preventDefault();
+  if (!isDrawing) {return false ;}
 
     var currentPoint = getMouse(e, canvas),
         dist = distanceBetween(lastPoint, currentPoint),
@@ -156,7 +164,6 @@ function getSecretNumber(id) {
 
 function updateNumbers(tag, position) {
   collectedNumbers+=1;
-
   switch (position) {
     case "1":
       $(tag).html("3").fadeIn(1000);
@@ -175,12 +182,14 @@ function updateNumbers(tag, position) {
   }
 
   if (collectedNumbers>5) {
+    $(".scr__canvas").hide();
     $(".scr__scratch-overlay").fadeOut("slow");
+
     scrollY(0);
     setTimeout(function(){
       self.location.href = "./thank-you.php#"
-      
     }, 3000)
+
   };
 }
 
@@ -193,21 +202,21 @@ window.onresize = function() {
 
 window.onload = function() {
   sizeScratchpad();
-  scratchPad("js-canvas1", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas2", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas3", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas4", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas5", canvasWidth, canvasHeight, 50);
-  scratchPad("js-canvas6", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas1", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas2", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas3", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas4", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas5", canvasWidth, canvasHeight, 50);
+  // scratchPad("js-canvas6", canvasWidth, canvasHeight, 50);
 }
 
 function sizeScratchpad () {
-  
   //Resizes the six scratchpad surfaces based on their 
   //proporitions to the actual image background. 
   //(The image is normally 800 px)
   counter = 0;
   while (counter < 6) {
+    
     canvasWidth  = parseInt($("#scr__scratch-underlay").width())
     canvasHeight = parseInt($("#scr__scratch-underlay").height());
      if (counter === 0) {
@@ -241,10 +250,8 @@ function sizeScratchpad () {
     ctx = $(".scr__canvas")[counter].getContext('2d');
     ctx.canvas.width = canvasWidth;
     ctx.canvas.height = canvasHeight;
-    
-   
     ctx.drawImage(tmpImage, 0, 0, 50, 50, 0, 0, canvasWidth, canvasHeight);
-
+    if($("#js-canvas"+parseInt(counter+1)).length > 0) scratchPad("js-canvas"+parseInt(counter+1), canvasWidth, canvasHeight, 50);
     counter++;
   }
    
