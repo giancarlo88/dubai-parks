@@ -18,7 +18,7 @@ require './modals.php';
 <div class="scr__instructions-numbers">
 <div class = "scr__instructions">
 		SCRATCH EACH SECTION TO DISCOVER THE <span class="bolded txt-highlight">
-		6 AMAZING EXPERIENCES</span> DUBAI PARKS & RESORTS HAS TO OFFER. 
+		6 AMAZING EXPERIENCES</span> DUBAI PARKS AND RESORTS HAS TO OFFER. 
 		ONCE THE OPENING DATE HAS BEEN REVEALED, YOU WILL THEN BE ENTERED INTO THE PRIZE DRAW. 
 		<!--<p>SCRATCH EACH PART OF AMAZING TO <span class = "txt-highlight">CRACK THE CODE</span>. 
 		ONCE ALL <span class = "bolded">6 NUMBERS</span> HAVE BEEN REVEALED YOU WILL 

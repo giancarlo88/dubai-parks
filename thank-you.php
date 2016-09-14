@@ -23,7 +23,7 @@ $last_page = true;
 			<div class="ty__overlay">
 			<div class = "ty__text">
 			<h2>Congratulations. You have cracked the code.</h2>
-			<h2>The grand opening date of Dubai Parks & Resorts is </h2>
+			<h2>The grand opening date of Dubai Parks and Resorts is </h2>
 			<h1><span class = "ty__date txt-highlight bolded">31/10/16</span></h1>
 			<h2>You have been entered into the prize draw to win a holiday to Dubai for two adults & two children, and tickets to Amazing.</h2>
 			<p>Share for an additional entry</p>
