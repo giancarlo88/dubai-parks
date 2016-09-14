@@ -69,6 +69,7 @@ $thisPage;
     </script>
     <![endif]-->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/scrollY.js"></script>
 <script src="../../<?php echo AppConfig::get('assets'); ?>/js/bootstrap.min.js"></script>
 
 </head>

@@ -117,7 +117,7 @@ AppConfig::set( array(
 		/**
 		 * Facebook application secret
 		 */
-		'facebook_app_secret' => '22f16300aa6ca63f1185c58a400f9b30',
+		'facebook_app_secret' => '365506e76ddf44dc8c7203145de6be33',
 
 
 		/**
@@ -141,7 +141,7 @@ AppConfig::set( array(
 		/**
 		 * Facebook share message
 		 */
-		'facebook_share_message' => 'I’ve cracked the code to reveal the grand opening date of Dubai Parks & Resorts for the chance to win an AMAZING family holiday. Discover Amazing and enter to WIN here. > unitedapps.co/ticket-to-amazing'
+		'facebook_share_message' => 'I’ve cracked the code to reveal the grand opening date of Dubai Parks and Resorts for the chance to win an AMAZING family holiday. Discover Amazing and enter to WIN here. > http://unitedapps.co/ticket-to-amazing'
 	)
 );
 

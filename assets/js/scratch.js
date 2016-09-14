@@ -1,8 +1,15 @@
-var canvasWidth, canvasHeight;
-var ua = navigator.userAgent.toLowerCase();
-var isAndroid = ua.indexOf("android") > -1;
-var scratchMat = [0, 0, 0, 0, 0, 0];
-var defaultWidth = $(window).width(), defaultHeight = $(window).height();
+var canvasWidth = 200,
+    canvasHeight = 300,
+    defaultWidth = $(window).width(), defaultHeight = $(window).height(),
+
+    ua = navigator.userAgent.toLowerCase(),
+    isAndroid = ua.indexOf("android") > -1,
+
+    scratchMat = [0, 0, 0, 0, 0, 0],
+    collectedNumbers = 0;
+
+
+//Disable scrolling on mobile devices while the canvas is being scratched
 $(document).on("touchstart", ".scr__canvas", function() {
   console.log("disabled")
   disableScroll();
@@ -12,14 +19,12 @@ $(document).on("touchstart", ".scr__instructions-numbers", function() {
   enableScroll();
 } )
 
-
 function preventDefault(e) {
   e = e || window.event;
   if (e.preventDefault)
       e.preventDefault();
   e.returnValue = false;  
 }
-
 
 function disableScroll() {
   if (window.addEventListener) // older FF
@@ -35,7 +40,8 @@ function enableScroll() {
 
 }
 
-var scrollY = function (y) {
+//If on Facebook Canvas, scroll the page to the top
+function scrollY(y) {
     if (window.jQuery) {
         FB.Canvas.getPageInfo (function (pageInfo) {
             $({ y: pageInfo.scrollTop })
@@ -57,11 +63,7 @@ var scrollY = function (y) {
     }
 };
 
-var collectedNumbers = 0;
-canvasWidth = 200;
-canvasHeight = 300;
-
-
+//Scratchpad function adapted from http://codepen.io/andreruffert/pen/pvqly under MIT license. See scratchpad-license.txt 
 function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   var isDrawing, lastPoint;
   var container    = document.getElementById('js-container'),
@@ -69,25 +71,14 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
       ctx          = canvas.getContext('2d'),
       brush        = new Image();
       image        = new Image(),
-  // base64 Workaround because Same-Origin-Policy\
-  image.src = "scratch-texture-large.jpg";
+      image.src = "scratch-texture-large.jpg";
 
- 
-  
-  
-  image.onload = function() {
+
+image.onload = function() {
     ctx.drawImage(image, 0, 0, image.naturalWidth, image.naturalHeight, 0, 0, image.naturalWidth, image.naturalHeight);
-    // Show the form when Image is loaded.
-    //document.querySelectorAll('.form')[0].style.visibility = 'visible';
   };
 
-  // imgLoadedWidth = image.naturalWidth;
-  // imgLoadedHeight = image.naturalHeight;
-
-  // $(".canvas").attr("width", image.naturalWidth);
-  // $(".canvas").attr("height", image.naturalHeight);
-
-  brush.src = "circle.png"
+  brush.src = "circle.png" //File that determines the scratch "paintbrush"
   
   canvas.addEventListener('mousedown', handleMouseDown, false);
   canvas.addEventListener('touchstart', handleMouseDown, false);
@@ -120,7 +111,6 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
         count++;
       }
     }
-    
     return Math.round((count / total) * 100);
   }
   
@@ -143,23 +133,18 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
   
   
   function handlePercentage(filledInPixels) {
-
     filledInPixels = filledInPixels || 0;
-
     if (filledInPixels > pixelThreshold) {
-
       currentCanvasId = canvas.id.charAt(canvas.id.length-1);
-      currentCanvasId-=1;
+      currentCanvasId -= 1;
       if ( scratchMat[ (parseInt(currentCanvasId)) ] == 0 ) {
-        getSecretNumber(canvas.id);
-         scratchMat[(parseInt(currentCanvasId))] = 1;
+          getSecretNumber(canvas.id);
+          scratchMat[(parseInt(currentCanvasId))] = 1;
       }
     }
-
   }
   
   function handleMouseDown(e) {
-
     isDrawing = true;
     lastPoint = getMouse(e, canvas);
   }
@@ -191,21 +176,18 @@ function scratchPad(canvasid, canvasWidth, canvasHeight, pixelThreshold) {
       setTimeout(function() { isDrawing = false; });
     }
   }
-  
 };
 
-function getSecretNumber(id) {
-
+//Determines the number to reveal and modal to show based on what canvas was scratched.
+function getSecretNumber(id) { 
   var position = id.charAt(id.length-1);
-  //if (scratchMat[position] == 0) return false;
-
   var idTag = "#scr__mystery-number" + position;
   var modalIdTag = "#modal" + position;
   updateNumbers(idTag, modalIdTag, position);
 }
 
+//Update the DOM and show the relevant modal.
 function updateNumbers(tag, modalTag, position) {
-
   collectedNumbers+=1;
   switch (position) {
     case "1":
@@ -223,34 +205,22 @@ function updateNumbers(tag, modalTag, position) {
       $(tag).fadeOut().html("6").fadeIn(1000);
       break;
   }
-setTimeout(function() {
-  scrollY(0);
-  $(modalTag).modal("show")
-  enableScroll();
-}, 1500); 
-//   if (collectedNumbers>5) {
-//     $(".scr__canvas").hide();
-//     $(".scr__scratch-overlay").fadeOut("slow");
-
-//     scrollY(0);
-//     setTimeout(function(){
-//       self.location.href = "./thank-you.php#"
-//     }, 3000)
-
-//   };
-// }
+  setTimeout(function() {
+    scrollY(0);
+    $(modalTag).modal("show")
+    enableScroll();
+  }, 1500); 
 }
 
+//If all the canvases have been scratched, redirect to the next page.
 $(document).on('hide.bs.modal', function (e) {
     if (collectedNumbers>5) {
     $(".scr__canvas").hide();
     $(".scr__scratch-overlay").fadeOut("slow");
-
     scrollY(0);
     setTimeout(function(){
       self.location.href = "./thank-you.php#"
     }, 1000)
-
   };
 })
 
@@ -258,24 +228,19 @@ $(document).on('hide.bs.modal', function (e) {
 tmpImage = new Image();
 tmpImage.src = "scratch-texture-large.jpg";
 
+//Ensure the app is responsive.
 window.onresize = function() {
       sizeScratchpad()
-  }
+}
 
 window.onload = function() {
   sizeScratchpad();
-  // scratchPad("js-canvas1", canvasWidth, canvasHeight, 50);
-  // scratchPad("js-canvas2", canvasWidth, canvasHeight, 50);
-  // scratchPad("js-canvas3", canvasWidth, canvasHeight, 50);
-  // scratchPad("js-canvas4", canvasWidth, canvasHeight, 50);
-  // scratchPad("js-canvas5", canvasWidth, canvasHeight, 50);
-  // scratchPad("js-canvas6", canvasWidth, canvasHeight, 50);
 }
 
 function sizeScratchpad () {
   //Resizes the six scratchpad surfaces based on their 
   //proporitions to the actual image background. 
-  //(The image is normally 800 px)
+  //(The image is normally 800px)
   counter = 0;
   while (counter < 6) {
     canvasWidth  = parseInt($("#scr__scratch-underlay").width())
@@ -324,6 +289,5 @@ function sizeScratchpad () {
     if($("#js-canvas"+parseInt(counter+1)).length > 0) scratchPad("js-canvas"+parseInt(counter+1), canvasWidth.toFixed(2), canvasHeight.toFixed(2), thresholdLimit);
     counter++;
   }
-   
 }
 

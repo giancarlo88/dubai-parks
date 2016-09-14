@@ -175,7 +175,9 @@ li {
     @media (max-width: 600px) {
       .tab__key-visual-container img {
         margin-top: 10px;
-        margin-bottom: 20px; } }
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0; } }
 
 .tab__overlay, .ty__overlay {
   text-align: center;
