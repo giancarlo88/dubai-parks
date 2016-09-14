@@ -38,8 +38,8 @@ $thisPage;
     <!-- Stylesheet -->
     
     <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/font-awesome-4.6.3/css/font-awesome.min.css">
-<!--<link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/style.css">
+    <link rel="stylesheet" href="../../<?php echo AppConfig::get('assets'); ?>/css/bootstrap.css">
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php echo AppConfig::get('assets'); ?>/images/favicon.png">
     
@@ -68,6 +68,8 @@ $thisPage;
     document.createElement('video');
     </script>
     <![endif]-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="../../<?php echo AppConfig::get('assets'); ?>/js/bootstrap.min.js"></script>
 
 </head>
 <body>

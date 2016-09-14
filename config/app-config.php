@@ -141,7 +141,7 @@ AppConfig::set( array(
 		/**
 		 * Facebook share message
 		 */
-		'facebook_share_message' => 'I’ve cracked the code to amazing. Enter to WIN > unitedapps.co/ticket-to-amazing'
+		'facebook_share_message' => 'I’ve cracked the code to reveal the grand opening date of Dubai Parks & Resorts for the chance to win an AMAZING family holiday. Discover Amazing and enter to WIN here. > unitedapps.co/ticket-to-amazing'
 	)
 );
 
@@ -155,7 +155,7 @@ AppConfig::set( array(
 		/**
 		 * Tweet text
 		 */
-		'twitter_tweet' => 'I’ve cracked the code to amazing. Enter to WIN! #amazingiscoming',
+		'twitter_tweet' => '#AmazingTsComing Enter for the chance to WIN tickets to Dubai Parks & Resorts:',
 
 
 		/**

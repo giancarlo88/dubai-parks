@@ -49,9 +49,7 @@ else {
 	</div>
 </div>
 -->
-	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/respond.min.js"></script>
-	<script src="assets/js/jquery.placeholderfallback.min.js"></script>
 	<script src="assets/js/socialmedia.min.js"></script>
 	<script src="assets/js/main.js?v=<?php echo time(); ?>"></script>
 	<!--[if lt IE 10]>

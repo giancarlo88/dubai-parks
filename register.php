@@ -43,7 +43,7 @@ require './template/header.php';
 							<input type="text" name="phone" id="phoneField" placeholder="Phone" class="form-control">
 						</div>
 					</div> -->
-						<p class = "reg__mn-message">Have the <span class = "bold">code</span> already? Insert it below:</p>
+						<p class = "reg__mn-message">Cracked the <span class = "bold">code</span> already? Insert it below:</p>
 						<div class = "reg__mystery-numbers">
 							<input id = "num1" class = "reg__mystery-number-form" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
 							<input id = "num2" class = "reg__mystery-number-form" type = "text" pattern="[0-9]" placeholder = "?" maxlength = "1" >
@@ -61,9 +61,9 @@ require './template/header.php';
 							</div>
 							<div class="reg__checkbox">
 								<label>		
-									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> <div class = "reg__long-checkbox">I want to sign up to receive marketing emails from Thomas Cook. 
+									<input type="checkbox" checked name="tc_subscription" id="tcSubscriptionField"> I want to sign up to receive marketing emails from Thomas Cook. 
 									We will not pass on your data to third parties for marketing. 
-									<a class = "txt-highlight" href="https://www.thomascook.com/privacy-policy/" target="_blank">View Privacy Policy</a></div>
+									<a class = "txt-highlight" href="https://www.thomascook.com/privacy-policy/" target="_blank">View Privacy Policy</a>
 								</label>
 							</div>
 						</div>

@@ -17,11 +17,6 @@ $(".reg__mystery-number-form").on("focusout", function() {
         }
   });
 
-$(".ty__sm-icon").on("click", function() {
-	setTimeout(function() {
-self.location.href = "http://www.dubaiparksandresorts.com"
-	}, 8000)
-})
 
 var scrollY = function (y) {
 	if (window.jQuery) {
@@ -34,11 +29,13 @@ var scrollY = function (y) {
                         duration: 1000,
                         step: function (offset) {
                             FB.Canvas.scrollTo(0, offset);
+							
                     }
                 });
         });
     } else {
         FB.Canvas.scrollTo(0, y);
+		return false;
     }
 };
 
@@ -468,9 +465,10 @@ var mnTries = 0;
 
 		var getStartedBtn = $('.tab__fb-login');
 
-		// if ( ! getStartedBtn.length ) return;
+		if ( ! getStartedBtn.length ) return;
 
-		$(document).on('click', '.tab__fb-login, .hd__register', function(e)	{
+	$(document).on('click', '.tab__fb-login, .hd__register', function(e){
+
 			var $this = $(this);
 
 			if ( response && response.status === 'connected' ) {
@@ -570,11 +568,11 @@ var mnTries = 0;
 			var combinedNumbers = numbers[1].concat(numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]);
 			
 			if ( formFields.firstNameField.val() == '' ) {
-				alert('First name is required.');
+				alert('First Name is required.');
 				formFields.firstNameField.focus();
 			}
 			else if ( formFields.firstNameField.val().length > 100 ) {
-				alert('A valid first name is required.');
+				alert('Please enter a valid first name.');
 				formFields.firstNameField.focus();
 			}
 			else if ( formFields.lastNameField.val() == '' ) {
@@ -582,15 +580,15 @@ var mnTries = 0;
 				formFields.lastNameField.focus();
 			}
 			else if ( formFields.lastNameField.val().length > 100 ) {
-				alert('A valid last name is required.');
+				alert('Please enter a valid last name.');
 				formFields.lastNameField.focus();
 			}
 			else if ( formFields.emailField.val() == '' ) {
-				alert('Email is required.');
+				alert('E-mail address is required.');
 				formFields.emailField.focus();
 			}
 			else if ( ! framework.isValidEmail(formFields.emailField.val()) || (formFields.emailField.val().length > 255) ) {
-				alert('A valid email is required.');
+				alert('Please enter a valid e-mail address.');
 				formFields.emailField.focus();
 			}
 			/*else if( ((formFields.phoneField.val() !== '') && ( formFields.phoneField.val().length > 15 || isNaN(formFields.phoneField.val()) )) || formFields.phoneField.val() == formFields.phoneField.attr('placeholder') )	{

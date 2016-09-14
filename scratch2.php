@@ -12,7 +12,7 @@ require './modals.php';
 
 
 ?>
-<script src="assets/js/scratch.js"></script>
+<script src="assets/js/scratch2.js"></script>
 
 <div class="app-wrapper">
 <div class="scr__instructions-numbers">

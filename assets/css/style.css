@@ -19,8 +19,8 @@ a {
   font-family: "klavika-bold", Helvetica, sans-serif; }
 
 .button {
-  color: white;
-  background: #fdad00;
+  color: white !important;
+  background: #fdad00 !important;
   border: 0; }
 
 .tc {
@@ -32,6 +32,11 @@ a {
   padding-right: 10px; }
 
 .app-wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
   width: 100%;
   height: 100% !important; }
 
@@ -41,6 +46,12 @@ body {
   background: #000;
   color: #fff;
   margin: 0; }
+  @media (min-width: 600px) {
+    body {
+      min-height: 800px; } }
+
+.modal-open {
+  overflow: inherit !important; }
 
 .currentPage a, .txt-highlight {
   color: #fdad00; }
@@ -109,30 +120,62 @@ li {
 .hd__page-header {
   font-family: "klavika-bold", Helvetica, sans-serif;
   width: 100%;
-  background-color: #1E1025;
+  background-color: #000000;
   margin: 0;
   text-align: center;
   height: 50px;
   padding: 25px 0; }
 
 .tab__byline {
-  font-family: "klavika-bold", Helvetica, sans-serif; }
+  max-width: 600px;
+  margin: 20px auto; }
 
-.tab__container-tc-priv, .reg__container-tc-priv, .ty__container-tc-priv {
+.tab__container-tc-priv {
   width: 100%;
   bottom: 0;
   font-size: 14px;
-  position: fixed; }
+  margin-top: 20px;
+  position: relative; }
+  @media (max-width: 600px) {
+    .tab__container-tc-priv {
+      display: none; } }
+
+.tab__container-tc-priv-mobile {
+  width: 100%;
+  bottom: 0;
+  font-size: 12px; }
+  @media (min-width: 601px) {
+    .tab__container-tc-priv-mobile {
+      display: none; } }
 
 .tab__inner {
   position: relative; }
 
 .tab__mobile-bg {
-  min-height: 500px;
+  min-height: 310px;
   min-width: 200px;
   background: url("../images/movie_poster.gif") no-repeat center;
   background-size: 100%;
   background-position: top; }
+  @media (min-width: 760px) {
+    .tab__mobile-bg {
+      min-height: 500px; } }
+
+.tab__key-visual-container {
+  text-align: center; }
+  @media (max-width: 600px) {
+    .tab__key-visual-container {
+      padding-top: 50px; } }
+  @media (max-width: 350px) {
+    .tab__key-visual-container {
+      padding-top: 0; } }
+  .tab__key-visual-container img {
+    width: 90%;
+    margin: 25px; }
+    @media (max-width: 600px) {
+      .tab__key-visual-container img {
+        margin-top: 10px;
+        margin-bottom: 20px; } }
 
 .tab__overlay, .ty__overlay {
   text-align: center;
@@ -192,7 +235,7 @@ video {
 .reg__checkbox label {
   display: block;
   margin-left: 20px;
-  text-shadow: 2px 2px #1E1025; }
+  text-shadow: 2px 2px #000000; }
 
 .reg__checkbox input {
   display: inline-block;
@@ -279,11 +322,11 @@ form {
   border-radius: 0px;
   color: #111; }
   .reg__mystery-number-form ::-moz-placeholder {
-    color: #1E1025; }
+    color: #000000; }
   .reg__mystery-number-form ::-webkit-input-placeholder {
-    color: #1E1025; }
+    color: #000000; }
   .reg__mystery-number-form ::-ms-input-placeholder {
-    color: #1E1025; }
+    color: #000000; }
   @media (max-width: 500px) {
     .reg__mystery-number-form {
       width: 40px;
@@ -327,7 +370,7 @@ form {
   margin-left: -70px; }
 
 .steps {
-  text-shadow: 2px 2px #1E1025; }
+  text-shadow: 2px 2px #000000; }
   .steps img {
     width: 120px;
     vertical-align: top;
@@ -354,7 +397,15 @@ form {
   display: block;
   border: 2px solid white;
   width: 60%;
-  margin: 20px auto; }
+  margin: 20px auto;
+  padding: 10px; }
+  @media (max-width: 600px) {
+    .scr__instructions {
+      margin: 5px auto;
+      font-size: 12px;
+      min-width: 275px;
+      padding: 3px;
+      margin-top: -30px; } }
 
 .scr__mystery-number-text {
   display: none; }
@@ -396,6 +447,9 @@ form {
   *background-size: 80%;
   background-position: center center;
 */ }
+  @media (max-width: 400px) {
+    .scr__scratch-container {
+      margin: -20px auto; } }
 
 .scr__scratch-overlay {
   position: absolute;
@@ -442,6 +496,89 @@ form {
   padding-top: 5px;
   padding-bottom: 0; }
 
+.scr__modal-img {
+  width: 100%; }
+
+.scr__modal-header-img {
+  width: 300px;
+  margin-top: -20px; }
+  @media (max-width: 400px) {
+    .scr__modal-header-img {
+      width: 250px; } }
+
+.scr__modal-header-img-container {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -20px; }
+
+.scr_modal-header-img-container-motiongate {
+  margin-top: -15px;
+  margin-bottom: -15px; }
+
+.scr__modal-header-img-motiongate {
+  margin: 20px; }
+
+.riverland {
+  width: 210px;
+  margin: 5px; }
+
+.legoland {
+  padding: 20px !important;
+  width: 250px; }
+
+.lapita {
+  width: 200px;
+  padding: 20px;
+  padding-bottom: 10px; }
+
+.modal-content {
+  background-color: #1E1025 !important;
+  border: 5px solid #fdad00 !important; }
+
+.modal-dialog {
+  width: 500px !important;
+  margin: 15px auto !important; }
+  @media (max-width: 500px) {
+    .modal-dialog {
+      width: 90% !important; } }
+
+.modal-header {
+  text-align: center !important;
+  padding: 0 !important;
+  border: 0 !important; }
+  .modal-header :before {
+    padding: 0 !important; }
+
+button.close {
+  background-color: #fdad00 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-size: 30px !important;
+  padding-bottom: 2.5px !important;
+  padding-left: 2.5px !important;
+  margin-right: -2px;
+  margin-bottom: -50px; }
+
+.modal-body, .modal, .modal-footer {
+  border: 0 !important;
+  padding: 0 !important; }
+  .modal-body p, .modal p, .modal-footer p {
+    margin: 0 !important;
+    padding: 5px 10px !important;
+    font-size: 15px; }
+
+.modal-footer {
+  text-align: center !important;
+  width: 30% !important;
+  margin: 0px auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 10px !important; }
+  .modal-footer button {
+    color: #000000 !important;
+    font-family: "klavika-bold", Helvetica, sans-serif;
+    font-size: 20px; }
+
 #js-canvas1 {
   position: absolute;
   z-index: 1;
@@ -485,7 +622,7 @@ form {
   transform: rotate(0deg); }
 
 .ty__overlay {
-  top: 200px;
+  top: 100px;
   height: 100%;
   min-height: 700px;
   background-color: rgba(0, 0, 0, 0.001); }
@@ -514,4 +651,5 @@ form {
   padding-bottom: 20px; }
 
 .ty__container-tc-priv {
-  bottom: -100px; }
+  bottom: -200px;
+  font-size: 16px; }

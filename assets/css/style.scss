@@ -2,7 +2,8 @@
 $tc-orange: rgb(253, 173, 0);
 $dp-pink: #E1005C;
 $text-color: rgb(255, 255, 255);
-$header-color: #1E1025;
+$modal-color: #1E1025;
+$header-color: #000000;
 $fonts: "klavika-regular", Helvetica, sans-serif;
 $bold-fonts: "klavika-bold", Helvetica, sans-serif;
 $border-colors: rgb(255, 0, 100), rgb(151, 0, 123), rgb(255, 69, 0),rgb(236, 0, 4), rgb(247, 229, 0), rgb(0, 179, 181);
@@ -39,8 +40,8 @@ a {
 
 .button{
   @extend .reg__form;
-  color: $text-color;
-  background: $tc-orange;
+  color: $text-color !important;
+  background: $tc-orange !important;
   border: 0;
 }
 
@@ -55,6 +56,11 @@ a {
   padding-right: 10px;
 }
 .app-wrapper {
+     -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
     width: 100%;
     height: 100% !important;
 }
@@ -66,7 +72,18 @@ body {
   background: #000;
   color: #fff;
   margin: 0;
+  @media (min-width: 600px) {
+    min-height: 800px;
 }
+  
+}
+
+.modal-open {
+    overflow: inherit !important; 
+    
+  }
+
+
 
 .currentPage a, .txt-highlight{
   color: $tc-orange;
@@ -155,14 +172,28 @@ li {
 
 //Tab Page elements
 .tab__byline {
-  font-family: $bold-fonts;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .tab__container-tc-priv {
   width: 100%;
   bottom: 0;
   font-size: 14px;
-  position: fixed;
+  margin-top: 20px;
+  position: relative;
+  @media (max-width: 600px){
+    display: none;
+}
+}
+
+.tab__container-tc-priv-mobile {
+  width: 100%;
+  bottom: 0;
+  font-size: 12px;
+  @media (min-width: 601px){
+    display: none;
+  }
 }
 
 .tab__inner {
@@ -170,11 +201,32 @@ li {
 }
 
 .tab__mobile-bg {
-  min-height: 500px;
+  min-height: 310px;
   min-width: 200px;
   background: url("../images/movie_poster.gif") no-repeat center;
   background-size: 100%;
   background-position: top; 
+    @media (min-width: 760px){
+      min-height: 500px;
+    }
+}
+
+.tab__key-visual-container {
+  text-align: center;
+  @media (max-width: 600px){
+    padding-top: 50px;
+  }
+  @media (max-width: 350px) {
+    padding-top: 0;
+  }
+  img {
+    width: 90%;
+    margin: 25px;
+    @media (max-width: 600px) {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .tab__overlay {
@@ -211,6 +263,9 @@ video {
     display: block;
     //background: url("../images/bg_ring.jpg") no-repeat center;
 }
+
+
+
 
 //Register Page Elements
 
@@ -268,7 +323,6 @@ margin-top: -32px;
 }
 
 .reg__container-tc-priv {
-  @extend .tab__container-tc-priv;
   position: relative;
   padding: 20px 0;
 }
@@ -442,6 +496,14 @@ form {
   border: 2px solid $text-color;
   width: 60%;
   margin: 20px auto;
+  padding: 10px;
+  @media(max-width:600px){  
+    margin: 5px auto;
+    font-size: 12px;
+    min-width: 275px;
+    padding: 3px;
+    margin-top: -30px;
+  }
 }
 
 .scr__mystery-number-text {
@@ -490,6 +552,9 @@ form {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  @media (max-width: 400px) {
+    margin: -20px auto;
+  }
   /*background: url("../../play_bg_underlay.png") no-repeat;
   *background-size: 80%;
   background-position: center center;
@@ -549,6 +614,108 @@ width: 100%;
 }
 
 
+.scr__modal-img {
+  width: 100%;
+}
+
+.scr__modal-header-img {
+  width:300px;
+  margin-top: -20px;
+  @media (max-width: 400px) {
+    width: 250px
+  }
+}
+
+.scr__modal-header-img-container{
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -20px;
+}
+
+.scr_modal-header-img-container-motiongate {
+    margin-top: -15px;
+    margin-bottom: -15px
+}
+
+.scr__modal-header-img-motiongate {
+  margin: 20px;
+}
+
+.riverland {
+    width: 210px;
+    margin: 5px
+}
+
+.legoland {
+  padding: 20px !important;
+  width: 250px;
+}
+
+.lapita {
+  width: 200px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.modal-content{
+  background-color: $modal-color !important;
+  border: 5px solid $tc-orange !important;
+}
+
+.modal-dialog {
+  width: 500px !important;
+  margin: 15px auto !important;
+  @media (max-width: 500px){
+    width: 90% !important;
+  }
+}
+
+.modal-header {
+  :before {
+    padding: 0 !important;
+  }
+  text-align: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+button.close {
+  background-color: $tc-orange !important;  
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-size: 30px !important;
+  padding-bottom: 2.5px !important;
+  padding-left: 2.5px !important;
+  margin-right: -2px;
+  margin-bottom: -50px;
+}
+
+
+.modal-body, .modal, .modal-footer {
+  border: 0 !important; 
+  padding: 0 !important;
+   p {
+     margin: 0 !important;
+     padding: 5px 10px !important;
+     font-size: 15px;
+   }
+}
+
+.modal-footer {
+  text-align: center !important;
+  width: 30% !important;
+  margin: 0px auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 10px !important;
+  button {
+    color: $header-color !important;
+    font-family: $bold-fonts;
+    font-size: 20px;
+  }
+}
+
+
 $heights: 12.7%, 12%, 43%, 61%, 59%, 43%;
 $lengths: 18.5%, 51%, 67%, 52%, 25%, 7.5%;
 $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
@@ -568,7 +735,7 @@ $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 //Thank-You Page Elements
 .ty__overlay {
   @extend .tab__overlay;
-    top: 200px;
+    top: 100px;
     height: 100%;
     min-height: 700px;
     background-color: rgba(0, 0, 0, 0.001);
@@ -607,7 +774,8 @@ $rotations: 0deg, 0deg, 0deg, 0deg, 20deg, 0deg;
 
 .ty__container-tc-priv {
   @extend .reg__container-tc-priv;
-  bottom: -100px;
+  bottom: -200px;
+  font-size: 16px;
 }
 
 // .tickboxes {
