@@ -1,5 +1,4 @@
-var canvasWidth = 200,
-    canvasHeight = 300,
+
     defaultWidth = $(window).width(), defaultHeight = $(window).height(),
 
     ua = navigator.userAgent.toLowerCase(),

@@ -102,7 +102,6 @@ strong {
 
 //Header Elements
 .hd__tc-logo {
-  //tc-img
   float: left;
   padding-left: 10px;
   width: 15%;
@@ -227,9 +226,14 @@ li {
       margin-bottom: 20px;
       margin-left: 0;
       margin-right: 0;
+         
+
     }
   }
 }
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 
 .tab__overlay {
   text-align: center;
@@ -255,6 +259,9 @@ li {
     }
   }
 }
+
+
+
 
 .tab__fb-login {
   width: 250px;
@@ -330,13 +337,9 @@ form {
 .reg__form-container {
   text-align: center;
   margin: 0 auto;
-  // @media (max-width: 850px) {
-  //   width: 90%;
-  // }
 }
 
 .reg__form {
-  //reg-form
   font-family: $fonts;
   font-size: 16px;
   padding-left: 5px;
@@ -349,12 +352,7 @@ form {
   color: #111;
 }
 
-// .register {
-//   color: #fff;
-//   font-size: 20px; 
-// }
 .reg__instructions {
-  //reg-instructions
   white-space: nowrap;
   width: 80%;
   margin: 0 auto;
@@ -371,7 +369,6 @@ form {
 }
 
 .reg__mystery-numbers {
-  //mysteryNumbers
   text-align: center;
   width: 100%;
   color: #eee;
@@ -387,7 +384,6 @@ form {
 }
 
 .reg__mystery-number-form {
-  //mysterynumber
   @extend .reg__form;
   background-color: #FFF;
   text-align: center;
@@ -544,13 +540,10 @@ form {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+
   @media (max-width: 400px) {
     margin: -20px auto;
   }
-  /*background: url("../../play_bg_underlay.png") no-repeat;
-  *background-size: 80%;
-  background-position: center center;
-*/
 }
 
 .scr__scratch-overlay {
@@ -780,6 +773,3 @@ $rotations: 0deg,
   font-size: 16px;
 }
 
-// .tickboxes {
-//   margin: 0 auto;
-// }

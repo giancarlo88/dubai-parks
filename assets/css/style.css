@@ -53,7 +53,8 @@ body {
 .modal-open {
   overflow: inherit !important; }
 
-.currentPage a, .txt-highlight {
+.currentPage a,
+.txt-highlight {
   color: #fdad00; }
 
 input[type=text]:focus {
@@ -120,7 +121,7 @@ li {
 .hd__page-header {
   font-family: "klavika-bold", Helvetica, sans-serif;
   width: 100%;
-  background-color: #000000;
+  background-color: black;
   margin: 0;
   text-align: center;
   height: 50px;
@@ -178,6 +179,15 @@ li {
         margin-bottom: 20px;
         margin-left: 0;
         margin-right: 0; } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
 
 .tab__overlay, .ty__overlay {
   text-align: center;
@@ -237,7 +247,7 @@ video {
 .reg__checkbox label {
   display: block;
   margin-left: 20px;
-  text-shadow: 2px 2px #000000; }
+  text-shadow: 2px 2px black; }
 
 .reg__checkbox input {
   display: inline-block;
@@ -294,22 +304,28 @@ form {
   white-space: nowrap;
   margin: 15px 0; }
 
-#num1, .scr__mystery-box1 {
+#num1,
+.scr__mystery-box1 {
   border-color: #ff0064 !important; }
 
-#num2, .scr__mystery-box2 {
+#num2,
+.scr__mystery-box2 {
   border-color: #97007b !important; }
 
-#num3, .scr__mystery-box3 {
+#num3,
+.scr__mystery-box3 {
   border-color: orangered !important; }
 
-#num4, .scr__mystery-box4 {
+#num4,
+.scr__mystery-box4 {
   border-color: #ec0004 !important; }
 
-#num5, .scr__mystery-box5 {
+#num5,
+.scr__mystery-box5 {
   border-color: #f7e500 !important; }
 
-#num6, .scr__mystery-box6 {
+#num6,
+.scr__mystery-box6 {
   border-color: #00b3b5 !important; }
 
 .reg__mystery-number-form {
@@ -324,11 +340,11 @@ form {
   border-radius: 0px;
   color: #111; }
   .reg__mystery-number-form ::-moz-placeholder {
-    color: #000000; }
+    color: black; }
   .reg__mystery-number-form ::-webkit-input-placeholder {
-    color: #000000; }
+    color: black; }
   .reg__mystery-number-form ::-ms-input-placeholder {
-    color: #000000; }
+    color: black; }
   @media (max-width: 500px) {
     .reg__mystery-number-form {
       width: 40px;
@@ -372,7 +388,7 @@ form {
   margin-left: -70px; }
 
 .steps {
-  text-shadow: 2px 2px #000000; }
+  text-shadow: 2px 2px black; }
   .steps img {
     width: 120px;
     vertical-align: top;
@@ -444,11 +460,7 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
-  user-select: none;
-  /*background: url("../../play_bg_underlay.png") no-repeat;
-  *background-size: 80%;
-  background-position: center center;
-*/ }
+  user-select: none; }
   @media (max-width: 400px) {
     .scr__scratch-container {
       margin: -20px auto; } }
@@ -483,7 +495,8 @@ form {
 .scr__big-slash {
   font-size: 75px; }
 
-.scr__mystery-number, .scr__big-slash {
+.scr__mystery-number,
+.scr__big-slash {
   margin: auto;
   vertical-align: bottom; }
 
@@ -535,7 +548,7 @@ form {
   padding-bottom: 10px; }
 
 .modal-content {
-  background-color: #1E1025 !important;
+  background-color: #1e1025 !important;
   border: 5px solid #fdad00 !important; }
 
 .modal-dialog {
@@ -562,10 +575,14 @@ button.close {
   margin-right: -2px;
   margin-bottom: -50px; }
 
-.modal-body, .modal, .modal-footer {
+.modal-body,
+.modal,
+.modal-footer {
   border: 0 !important;
   padding: 0 !important; }
-  .modal-body p, .modal p, .modal-footer p {
+  .modal-body p,
+  .modal p,
+  .modal-footer p {
     margin: 0 !important;
     padding: 5px 10px !important;
     font-size: 15px; }
@@ -577,7 +594,7 @@ button.close {
   padding-top: 0 !important;
   padding-bottom: 10px !important; }
   .modal-footer button {
-    color: #000000 !important;
+    color: black !important;
     font-family: "klavika-bold", Helvetica, sans-serif;
     font-size: 20px; }
 

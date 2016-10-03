@@ -54,13 +54,13 @@ var mnTries = 0;
 		framework.enableSocialShare(response);
 
 		// Setup quiz validation
-		framework.quizValidation(response);
+		//framework.quizValidation(response);
 
 		// Invite friends via FB
-		framework.inviteViaFacebook(response);
+		//framework.inviteViaFacebook(response);
 
 		// Invite friends via FB
-		framework.inviteViaEmail(response);
+		//framework.inviteViaEmail(response);
 	};
 
 	/**
@@ -68,8 +68,7 @@ var mnTries = 0;
 	 */
 	framework.enableSocialShare = function(response) {
 		var fbShareBtn = $('.ss-facebook'),
-			twttrShareBtn = $('.ss-twitter'),
-			gplusShareBtn = $('.ss-gplus');
+			twttrShareBtn = $('.ss-twitter');
 
 		if (!fbShareBtn.length) return;
 
@@ -88,19 +87,6 @@ var mnTries = 0;
 				picture: $picture,
 				caption: $caption,
 				description: $description
-			});
-
-			e.preventDefault();
-		});
-
-
-		// Google Plus Share
-		gplusShareBtn.on('click', function(e) {
-			var $this = $(this),
-				$link = $this.data('link');
-
-			framework.gplus.Share({
-				link: $link
 			});
 
 			e.preventDefault();
@@ -248,11 +234,14 @@ var mnTries = 0;
 				}
 			} else if (combinedNumbers == "311016") {
 				scrollY(0);
+				
 				setTimeout(function() {
 					self.location.href = "./thank-you.php"
+						
 				}, 1000);
+				return e.preventDefault;
 			} else {
-				return true;
+				return e.preventDefault;
 			}
 			return e.preventDefault();
 		});
